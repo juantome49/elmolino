@@ -240,6 +240,7 @@
             color: var(--color-principal);
             font-weight: 700;
         }
+        
         /* Estilo específico para el contenedor de video en Almacén */
         .video-container {
             margin-top: 40px;
@@ -255,6 +256,32 @@
             display: block;
             width: 100%;
             height: auto;
+        }
+        
+        /* Nuevo estilo para la cuadrícula de imágenes en Almacén */
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 650px) {
+            .image-grid {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
 
@@ -474,6 +501,11 @@
                 <source src="fotos/VID-20251012-WA0006.mp4" type="video/mp4">
                 Tu navegador no soporta la etiqueta de video.
             </video>
+        </div>
+
+        <div class="image-grid">
+            <img src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén">
+            <img src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén">
         </div>
         
         <div class="service-list">
