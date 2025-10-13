@@ -429,9 +429,14 @@
         
         /* ESTILOS ESPECÍFICOS PARA TÉRMINOS Y PRIVACIDAD */
         #terminos, #privacidad {
-            min-height: 50vh; 
+            /* OCULTA AMBAS SECCIONES POR DEFECTO */
+            display: none; 
             padding-top: 120px; 
             background-color: var(--color-claro);
+        }
+        
+        #terminos.visible, #privacidad.visible {
+            display: block; /* ESTE ES EL ESTILO QUE EL JS APLICARÁ PARA MOSTRARLAS */
         }
 
 
@@ -546,11 +551,11 @@
             </div>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="#cabanas">Cabañas</a></li>
-                <li><a href="#almacen">Almacén</a></li>
-                <li><a href="#buffet">Buffet</a></li>
-                <li><a href="#servicios">Pesca</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#cabanas" class="main-nav-link">Cabañas</a></li>
+                <li><a href="#almacen" class="main-nav-link">Almacén</a></li>
+                <li><a href="#buffet" class="main-nav-link">Buffet</a></li>
+                <li><a href="#servicios" class="main-nav-link">Pesca</a></li>
+                <li><a href="#ubicacion" class="main-nav-link">Ubicación</a></li>
                 <li><a href="https://wa.me/542267524958?text=Hola%2C%20estoy%2F%20a%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
                        target="_blank" 
                        class="btn-principal">Reservar Ahora</a></li>
@@ -803,8 +808,8 @@
         <p>© 2025 El Molino. Todos los derechos reservados.</p>
         <p style="margin-top: 5px;">Diseño web de Techne Nest</p>
         <div class="footer-links">
-            <a href="#terminos">Términos y Condiciones</a> |
-            <a href="#privacidad">Política de Privacidad</a> |
+            <a href="#terminos" class="policy-link">Términos y Condiciones</a> |
+            <a href="#privacidad" class="policy-link">Política de Privacidad</a> |
             <a href="https://www.instagram.com/elmolino_cabanas/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </footer>
@@ -818,6 +823,48 @@
         // **********************************************************
         // JS para Carrusel, Header (Fijo), Lightbox y Menú Móvil
         // **********************************************************
+        
+        // 5. Gestión de Visibilidad de Políticas Legales
+        const policySections = document.querySelectorAll('.policy-section');
+        const policyLinks = document.querySelectorAll('.policy-link');
+        const mainLinks = document.querySelectorAll('.main-nav-link, .logo a, .btn-hero');
+
+        function hideAllPolicies() {
+            policySections.forEach(section => {
+                section.classList.remove('visible');
+            });
+        }
+        
+        // Función para manejar el clic en los enlaces de Política/Términos
+        policyLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                
+                // Ocultar todas las secciones de política primero
+                hideAllPolicies(); 
+                
+                // Determinar qué sección mostrar
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.classList.add('visible');
+                    
+                    // Hacer scroll a la sección mostrada
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                }
+            });
+        });
+
+        // Función para ocultar las políticas cuando se navega a una sección principal
+        mainLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hideAllPolicies();
+            });
+        });
+
 
         // 1. Carrusel de Héroe (Slideshow)
         let slideIndex = 0;
