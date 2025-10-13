@@ -93,21 +93,20 @@
             background-color: #388E3C; /* Verde oscuro al pasar el ratón */
         }
 
-        /* Sección Hero */
+        /* Sección Hero con Slideshow */
         #hero {
-            background: url('ruta/a/tu/imagen-principal.jpg') no-repeat center center/cover; /* Usar una imagen de cabañas y paisaje */
-            height: 100vh;
+            position: relative;
+            height: 100vh; /* Ocupa toda la altura de la ventana */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--color-claro);
-            position: relative;
             margin-top: 60px; /* Para que no quede bajo el header fijo */
+            overflow: hidden; /* Asegura que las imágenes no se desborden */
         }
 
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.4);
+        .slideshow-container {
             position: absolute;
             top: 0;
             left: 0;
@@ -115,9 +114,34 @@
             height: 100%;
         }
 
+        .mySlides {
+            display: none; /* Oculta todas las diapositivas por defecto */
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+        }
+
+        /* Capa de superposición para el texto del hero */
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Asegura que la superposición esté sobre las imágenes */
+        }
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2; /* Asegura que el contenido esté sobre la superposición */
+            max-width: 800px;
+            padding: 20px;
         }
 
         .hero-content h1 {
@@ -130,6 +154,18 @@
             font-size: 1.2em;
             margin-bottom: 30px;
         }
+
+        /* Animación Fade */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
 
         /* Estilos de Sección general */
         section {
@@ -200,6 +236,20 @@
     </header>
 
     <section id="hero">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="fotos/IMG-20251012-WA0012.jpg" alt="Cabaña vista exterior">
+            </div>
+            <div class="mySlides fade">
+                <img src="fotos/IMG-20251012-WA0013.jpg" alt="Interior de cabaña">
+            </div>
+            <div class="mySlides fade">
+                <img src="fotos/IMG-20251012-WA0016.jpg" alt="Paisaje natural de El Molino">
+            </div>
+            <div class="mySlides fade">
+                <img src="fotos/IMG-20251012-WA0017.jpg" alt="Detalle rústico de El Molino">
+            </div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>El Molino: Tu Refugio en la Naturaleza</h1>
@@ -278,6 +328,23 @@
             <a href="https://www.instagram.com/tumolino" target="_blank">Instagram</a>
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 4000); // Cambia de imagen cada 4 segundos (4000ms)
+        }
+    </script>
 
 </body>
 </html>
