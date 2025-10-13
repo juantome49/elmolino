@@ -27,7 +27,8 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* CLAVE: Para evitar barras de desplazamiento por 100vw */
+            /* CLAVE: Evita barras de desplazamiento horizontal */
+            overflow-x: hidden; 
         }
 
         /* ********************************************************** */
@@ -77,8 +78,9 @@
         .logo {
             display: flex;
             align-items: center;
-            flex-grow: 1;
+            /* CORRECCIÓN: Alineación a la izquierda */
             justify-content: flex-start;
+            flex-grow: 1; /* Permite que ocupe espacio, pero la alineación es a la izquierda */
         }
         
         .logo img {
@@ -114,7 +116,6 @@
 
         .btn-principal:hover {
             background-color: #388E3C; 
-            color: var(--color-claro);
         }
 
         /* ********************************************************** */
@@ -123,12 +124,10 @@
         #hero {
             position: relative;
             height: 100vh;
-            /* CLAVE DE CORRECCIÓN */
+            /* CLAVE DE CORRECCIÓN: Centrado de elemento Full-Width */
             width: 100vw; 
-            left: 50%; /* Mueve el borde izquierdo al centro de la pantalla */
-            right: 50%; /* Mueve el borde derecho al centro de la pantalla */
-            margin-left: -50vw; /* Desplaza el elemento la mitad de su ancho hacia la izquierda */
-            margin-right: -50vw; /* (redundante, pero a veces ayuda con el centrado) */
+            left: 50%;
+            transform: translateX(-50%);
             /* FIN CLAVE DE CORRECCIÓN */
             
             overflow: hidden; 
@@ -137,7 +136,7 @@
             align-items: center;
             text-align: center;
             color: var(--color-claro);
-            padding: 0; /* Aseguramos que no haya padding que lo reduzca */
+            padding: 0;
         }
         
         .slideshow-container {
@@ -322,6 +321,8 @@
             <a href="#cabanas" class="btn-hero">Ver Cabañas</a>
         </div>
     </section>
+
+<hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
 
     <section id="cabanas">
         <h2 class="section-title">Nuestras Cabañas</h2>
