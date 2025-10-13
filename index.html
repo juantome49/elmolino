@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Molino - Cabañas y Almacén Regional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
     <style>
         /* Estilos básicos para la estructura */
         :root {
@@ -259,7 +259,7 @@
             height: auto;
         }
         
-        /* Estilo para la CUADRÍCULA de imágenes en Almacén */
+        /* Estilo para la CUADRÍCULA de imágenes en Almacén/Buffet */
         .almacen-photos {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
@@ -449,7 +449,8 @@
             <ul class="nav-links">
                 <li><a href="#cabanas">Cabañas</a></li>
                 <li><a href="#almacen">Almacén</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#buffet">Buffet</a></li>
+                <li><a href="#servicios">Pesca</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
             </ul>
@@ -487,7 +488,7 @@
         
         <div class="gallery-placeholder">
             Coloca aquí las fotos de las Cabañas (Cocina, Exterior, Interior, etc.)
-            </div>
+        </div>
 
         <div class="service-list">
             <div class="service-group">
@@ -518,6 +519,51 @@
 
     <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
 
+    <section id="almacen">
+        <h2 class="section-title">Almacén Regional</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Encuentra productos locales, bebidas y todo lo necesario en nuestro auténtico almacén.</p>
+        
+        <div class="video-container">
+             <video autoplay loop muted controls playsinline>
+                <source src="fotos/VID-20251012-WA0006.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+        
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
+    <section id="buffet">
+        <h2 class="section-title">Quincho Buffet y Sabores Regionales</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Disfruta de nuestro quincho buffet con asado, ensaladas frescas y postres caseros.</p>
+        
+        <div class="almacen-photos">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0065.jpg" alt="Asado en el quincho buffet">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0060.jpg" alt="Mesa de productos regionales">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0057.jpg" alt="Variedad de platos y picadas">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0056.jpg" alt="Vista del área de buffet">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0054.jpg" alt="Bebidas y postres">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0049.jpg" alt="Detalle de la barra de servicio">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0046.jpg" alt="Detalles de decoración y servicio">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0045.jpg" alt="Plato principal del menú">
+        </div>
+        
+        <div class="service-list">
+            <div class="service-group">
+                <h3>Menú Quincho</h3>
+                <ul>
+                    <li>Bebidas</li>
+                    <li>Asado</li>
+                    <li>Ensaladas</li>
+                    <li>Postres</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
     <section id="servicios">
         <h2 class="section-title">Servicio de Pesca</h2>
         <p style="text-align: center; margin-bottom: 40px;">Vive la aventura con nuestro completo servicio de pesca a solo 7km de la laguna.</p>
@@ -535,43 +581,6 @@
                     <li>Picadas a bordo</li>
                     <li>Porciones de mojarras</li>
                     <li>Servicio de fileteado</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
-
-    <section id="almacen">
-        <h2 class="section-title">Almacén y Quincho Buffet</h2>
-        <p style="text-align: center; margin-bottom: 40px;">Disfruta de nuestros sabores regionales en el almacén o con el servicio de quincho buffet.</p>
-        
-        <div class="video-container">
-             <video autoplay loop muted controls playsinline>
-                <source src="fotos/VID-20251012-WA0006.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-
-        <div class="almacen-photos">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén 1">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén 2">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0057.jpg" alt="Foto de productos regionales del almacén 3">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0056.jpg" alt="Foto del quincho buffet 4">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0054.jpg" alt="Foto de bebidas en el almacén 5">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0049.jpg" alt="Foto de la barra del almacén 6">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0046.jpg" alt="Foto de detalles de la decoración del almacén 7">
-            <img class="expandable-img" src="fotos/IMG-20251012-WA0045.jpg" alt="Foto de la comida del buffet 8">
-        </div>
-        
-        <div class="service-list">
-            <div class="service-group">
-                <h3>Menú Quincho</h3>
-                <ul>
-                    <li>Bebidas</li>
-                    <li>Asado</li>
-                    <li>Ensaladas</li>
-                    <li>Postres</li>
                 </ul>
             </div>
         </div>
@@ -609,7 +618,7 @@
     </footer>
 
     <div id="myLightbox" class="lightbox">
-        <span class="close" id="closeLightbox">&times;</span> 
+        <span class="close" id="closeLightbox">×</span> 
 
         <img class="lightbox-content" id="expandedImg">
     </div>
@@ -639,6 +648,8 @@
         const lightbox = document.getElementById("myLightbox");
         const expandedImg = document.getElementById("expandedImg");
         const closeBtn = document.getElementById("closeLightbox");
+        
+        // Nota: Ahora seleccionamos todas las imágenes con la clase 'expandable-img', estén en almacén o buffet.
         const images = document.getElementsByClassName("expandable-img");
 
         // Función para cerrar el lightbox
