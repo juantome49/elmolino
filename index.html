@@ -259,7 +259,7 @@
             height: auto;
         }
         
-        /* Estilo para la NUEVA cuadrícula de imágenes en Almacén */
+        /* Estilo para la CUADRÍCULA de imágenes en Almacén */
         .almacen-photos {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
@@ -269,30 +269,70 @@
             padding: 0 20px;
         }
 
-        /* Estilo de la imagen dentro del enlace */
-        .almacen-photos a img {
-            display: block; /* Para que el enlace se ajuste al tamaño de la imagen */
+        /* Estilo de la imagen (ahora clickeable) */
+        .almacen-photos img {
+            display: block; 
             width: 100%;
             height: 200px; /* Altura fija para uniformidad */
-            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+            object-fit: cover; 
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
-            cursor: pointer; /* Indica que es clickeable */
+            cursor: pointer; 
         }
         
-        /* Estilo del enlace (contenedor de la imagen) */
-        .almacen-photos a {
-            display: block;
-            text-decoration: none;
-            line-height: 0; /* Elimina espacio extra debajo de la imagen */
-        }
-
-        .almacen-photos a img:hover {
+        .almacen-photos img:hover {
             transform: scale(1.03);
             opacity: 0.9;
         }
 
+        /* ********************************************************** */
+        /* ESTILOS LIGHTBOX (EXPANSION DE IMAGEN) */
+        /* ********************************************************** */
+        .lightbox {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 3000; /* Siempre encima de todo */
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; /* Permite desplazamiento si la imagen es muy grande */
+            background-color: rgba(0,0,0,0.9); /* Fondo oscuro semitransparente */
+            text-align: center;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 900px; /* Limita el tamaño máximo de la imagen */
+            max-height: 80vh; /* Limita la altura para no ocupar toda la pantalla verticalmente */
+            object-fit: contain; /* Asegura que toda la imagen sea visible */
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            line-height: 1; 
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Medias Queries (Responsive) */
         @media (max-width: 900px) {
             .almacen-photos {
                 grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
@@ -303,13 +343,15 @@
                 grid-template-columns: 1fr; /* 1 columna en móviles */
                 gap: 20px;
             }
-            .almacen-photos a img {
+            .almacen-photos img {
                  height: 250px;
             }
+            .lightbox-content {
+                width: 95%; 
+            }
         }
-
-
-        /* Estilos específicos para las listas de servicios */
+        
+        /* Estilos para listas de servicios y ubicación... (sin cambios) */
         .service-list {
             max-width: 800px;
             margin: 20px auto;
@@ -351,20 +393,6 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
-        @media (max-width: 600px) {
-            .service-group ul li {
-                flex-basis: 100%; 
-            }
-        }
-
-
-        /* Sección Ubicación */
-        #ubicacion {
-            padding: 50px 0; 
-            background-color: var(--color-secundario);
-            width: 100%;
-        }
-        
         .ubicacion-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -396,7 +424,6 @@
             border: 0;
         }
         
-        /* Footer */
         footer {
             background-color: var(--color-texto);
             color: var(--color-secundario);
@@ -409,7 +436,6 @@
             margin: 0 10px;
             text-decoration: none;
         }
-        
     </style>
 </head>
 <body>
@@ -461,7 +487,7 @@
         
         <div class="gallery-placeholder">
             Coloca aquí las fotos de las Cabañas (Cocina, Exterior, Interior, etc.)
-        </div>
+            </div>
 
         <div class="service-list">
             <div class="service-group">
@@ -528,30 +554,14 @@
         </div>
 
         <div class="almacen-photos">
-            <a href="fotos/IMG-20251012-WA0065.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén 1">
-            </a>
-            <a href="fotos/IMG-20251012-WA0060.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén 2">
-            </a>
-            <a href="fotos/IMG-20251012-WA0057.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0057.jpg" alt="Foto de productos regionales del almacén 3">
-            </a>
-            <a href="fotos/IMG-20251012-WA0056.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0056.jpg" alt="Foto del quincho buffet 4">
-            </a>
-            <a href="fotos/IMG-20251012-WA0054.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0054.jpg" alt="Foto de bebidas en el almacén 5">
-            </a>
-            <a href="fotos/IMG-20251012-WA0049.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0049.jpg" alt="Foto de la barra del almacén 6">
-            </a>
-            <a href="fotos/IMG-20251012-WA0046.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0046.jpg" alt="Foto de detalles de la decoración del almacén 7">
-            </a>
-            <a href="fotos/IMG-20251012-WA0045.jpg" target="_blank">
-                <img src="fotos/IMG-20251012-WA0045.jpg" alt="Foto de la comida del buffet 8">
-            </a>
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén 1">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén 2">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0057.jpg" alt="Foto de productos regionales del almacén 3">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0056.jpg" alt="Foto del quincho buffet 4">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0054.jpg" alt="Foto de bebidas en el almacén 5">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0049.jpg" alt="Foto de la barra del almacén 6">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0046.jpg" alt="Foto de detalles de la decoración del almacén 7">
+            <img class="expandable-img" src="fotos/IMG-20251012-WA0045.jpg" alt="Foto de la comida del buffet 8">
         </div>
         
         <div class="service-list">
@@ -598,7 +608,14 @@
         </div>
     </footer>
 
+    <div id="myLightbox" class="lightbox">
+        <span class="close" id="closeLightbox">&times;</span> 
+
+        <img class="lightbox-content" id="expandedImg">
+    </div>
+
     <script>
+        // JS para el carrusel de héroe (sin cambios)
         let slideIndex = 0;
         showSlides();
 
@@ -612,6 +629,39 @@
             if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 4000); // Cambia de imagen cada 4 segundos
+        }
+        
+        // **********************************************************
+        // JS para el LIGHTBOX (la funcionalidad de expansión)
+        // **********************************************************
+        
+        // Obtener los elementos del DOM
+        const lightbox = document.getElementById("myLightbox");
+        const expandedImg = document.getElementById("expandedImg");
+        const closeBtn = document.getElementById("closeLightbox");
+        const images = document.getElementsByClassName("expandable-img");
+
+        // Función para cerrar el lightbox
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+        
+        // Asignar el evento de clic a cada imagen
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                lightbox.style.display = "block";
+                expandedImg.src = this.src; // Pone la fuente de la imagen clickeada en la imagen grande
+            }
+        }
+
+        // Asignar el evento de clic al botón de cerrar (la cruz)
+        closeBtn.onclick = closeLightbox;
+
+        // Cierra el lightbox si el usuario hace clic fuera de la imagen (en el fondo oscuro)
+        lightbox.onclick = function(event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
         }
     </script>
 
