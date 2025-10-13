@@ -436,6 +436,19 @@
             margin: 0 10px;
             text-decoration: none;
         }
+        
+        /* Estilo para el enlace de WhatsApp en Contacto */
+        .whatsapp-link {
+            text-decoration: none;
+            color: inherit; 
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 5px;
+            transition: color 0.3s;
+        }
+        .whatsapp-link:hover {
+            color: var(--color-acento);
+        }
     </style>
 </head>
 <body>
@@ -452,7 +465,9 @@
                 <li><a href="#buffet">Buffet</a></li>
                 <li><a href="#servicios">Pesca</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
+                <li><a href="https://wa.me/542267524958?text=Hola%2C%20estoy%20interesado%2Fa%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
+                       target="_blank" 
+                       class="btn-principal">Reservar Ahora</a></li>
             </ul>
         </nav>
     </header>
@@ -604,7 +619,14 @@
             <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
             <div id="contacto">
                 <p><strong>Dirección:</strong> Gral. Juan Madariaga, Provincia de Buenos Aires, Argentina</p>
-                <p><strong>Teléfono:</strong> +54 2267 52-4958</p>
+                <p>
+                    <strong>Teléfono:</strong> 
+                    <a href="https://wa.me/542267524958?text=Hola%2C%20estoy%20interesado%2Fa%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
+                       target="_blank" 
+                       class="whatsapp-link">
+                        +54 2267 52-4958 (WhatsApp)
+                    </a>
+                </p>
                 
                 <div class="map-container">
                     <iframe 
@@ -626,7 +648,7 @@
         <div class="footer-links">
             <a href="#">Términos y Condiciones</a> |
             <a href="#">Política de Privacidad</a> |
-            <a href="https://www.instagram.com/tumolino" target="_blank">Instagram</a>
+            <a href="https://www.instagram.com/elmolino_cabanas/" target="_blank">Instagram</a>
         </div>
     </footer>
 
