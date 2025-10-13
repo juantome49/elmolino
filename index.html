@@ -27,7 +27,7 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            /* CLAVE: Evita barras de desplazamiento horizontal */
+            /* CLAVE: Evita barras de desplazamiento horizontal por el 100vw */
             overflow-x: hidden; 
         }
 
@@ -78,9 +78,8 @@
         .logo {
             display: flex;
             align-items: center;
-            /* CORRECCIÓN: Alineación a la izquierda */
             justify-content: flex-start;
-            flex-grow: 1; /* Permite que ocupe espacio, pero la alineación es a la izquierda */
+            flex-grow: 1;
         }
         
         .logo img {
@@ -124,6 +123,7 @@
         #hero {
             position: relative;
             height: 100vh;
+            
             /* CLAVE DE CORRECCIÓN: Centrado de elemento Full-Width */
             width: 100vw; 
             left: 50%;
