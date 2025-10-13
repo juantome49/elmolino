@@ -27,7 +27,7 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* CLAVE: Evita el scroll horizontal causado por 100vw */
+            overflow-x: hidden; /* CLAVE: Para evitar barras de desplazamiento por 100vw */
         }
 
         /* ********************************************************** */
@@ -78,8 +78,7 @@
             display: flex;
             align-items: center;
             flex-grow: 1;
-            justify-content: flex-start; /* Alineación a la izquierda dentro del nav */
-            
+            justify-content: flex-start;
         }
         
         .logo img {
@@ -124,14 +123,21 @@
         #hero {
             position: relative;
             height: 100vh;
-            width: 100vw; /* Usar Viewport Width para asegurar el 100% de la pantalla */
-            margin-left: calc(-50vw + 50%); /* Centra el elemento en el viewport a pesar de 100vw */
+            /* CLAVE DE CORRECCIÓN */
+            width: 100vw; 
+            left: 50%; /* Mueve el borde izquierdo al centro de la pantalla */
+            right: 50%; /* Mueve el borde derecho al centro de la pantalla */
+            margin-left: -50vw; /* Desplaza el elemento la mitad de su ancho hacia la izquierda */
+            margin-right: -50vw; /* (redundante, pero a veces ayuda con el centrado) */
+            /* FIN CLAVE DE CORRECCIÓN */
+            
             overflow: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--color-claro);
+            padding: 0; /* Aseguramos que no haya padding que lo reduzca */
         }
         
         .slideshow-container {
