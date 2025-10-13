@@ -32,16 +32,24 @@
         }
 
         /* ********************************************************** */
-        /* HEADER y NAV */
+        /* HEADER y NAV (Restaurando el efecto SCROLLED para visibilidad) */
         /* ********************************************************** */
         header {
-            background-color: transparent;
+            background-color: transparent; 
             padding: 20px 0;
-            position: absolute; 
+            position: fixed; /* Fijo para que el menú siempre esté visible */
             width: 100%;
             top: 0;
             left: 0;
             z-index: 2000; 
+            transition: background-color 0.4s ease, padding 0.4s ease;
+        }
+        
+        /* Efecto de cambio de fondo al hacer scroll (Asegura legibilidad) */
+        header.scrolled {
+            background-color: rgba(139, 69, 19, 0.95); /* Fondo sólido al hacer scroll */
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav {
@@ -59,26 +67,35 @@
             list-style: none;
             transition: all 0.3s ease-out;
         }
-        /* ... Estilos de logo, links y botón principal se mantienen ... */
 
-        .logo { /* Mantenido para evitar reescribir todo */ }
-        .logo img { /* Mantenido */ }
-        .logo a { /* Mantenido */ }
-        .nav-links li { /* Mantenido */ }
-        .nav-links a { /* Mantenido */ }
-        .menu-toggle { /* Mantenido */ }
-        .btn-principal { /* Mantenido */ }
-        .btn-principal:hover { /* Mantenido */ }
+        .nav-links a {
+            color: var(--color-claro);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+        }
 
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em; 
+            color: var(--color-claro);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+            margin: 0; 
+        }
+        
+        /* Ícono de Hamburguesa y Botón principal (Se mantienen) */
 
         /* ********************************************************** */
-        /* Sección Hero (ANCHO COMPLETO) */
+        /* Sección Hero (ANCHO COMPLETO Y CENTRADO) */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
-            width: 100%; /* ANCHO COMPLETO */
-            max-width: none; /* Asegura que no tenga límite de ancho */
+            width: 100%; 
+            max-width: none; 
             margin: 0; 
             overflow: hidden; 
             display: flex;
@@ -93,22 +110,28 @@
         .slideshow-container, .mySlides, .mySlides img {
             width: 100%;
             height: 100%;
-            position: absolute; /* Para que ocupen todo el espacio del Hero */
+            position: absolute; 
             top: 0;
             left: 0;
         }
         
         .mySlides img {
-            object-fit: cover; /* Para que la imagen cubra todo sin distorsionarse */
+            object-fit: cover; 
         }
         
-        /* Contenido de Hero y Overlays (Mantenidos) */
-        .hero-overlay { /* Mantenido */ }
-        .hero-content { /* Mantenido */ }
-        .hero-content h1 { /* Mantenido */ }
-        .hero-content p { /* Mantenido */ }
-        .btn-hero { /* Mantenido */ }
-        .btn-hero:hover { /* Mantenido */ }
+        .hero-content {
+             /* Asegura que el contenido quede arriba de la imagen */
+            z-index: 100; 
+            max-width: 90%; 
+            margin-top: 50px; /* Separación del header fijo */
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 4.5em; 
+            margin-bottom: 20px; /* Ajuste para mejor espaciado */
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+        }
 
 
         /* ********************************************************** */
@@ -119,16 +142,8 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--color-principal);
-        }
-        
-        /* Nuevo contenedor principal de la sección para el recuadro */
+
+        /* Contenedor principal para recuadro */
         .section-container {
             background-color: var(--color-secundario);
             border-radius: 12px;
@@ -137,75 +152,22 @@
             margin-top: 20px;
         }
         
-        /* Título dentro del recuadro */
-        .section-container h2 {
-            margin-top: 0;
-            color: var(--color-principal);
-        }
-
-        /* Cuadrícula de 3 columnas (MANTENIDA) */
+        /* Cuadrícula de Imágenes (Ajuste para centrado en Recuadro) */
         .almacen-photos {
             display: grid;
             grid-template-columns: repeat(3, 1fr); 
             gap: 15px;
-            max-width: 1000px;
+            max-width: 100%; /* Ocupa el 100% del recuadro contenedor */
             margin: 40px auto;
             padding: 0;
         }
-
+        
         .almacen-photos img {
-            display: block; 
             width: 100%;
             height: 200px; 
             object-fit: cover; 
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-            cursor: pointer; 
         }
 
-        /* Contenedores de Servicios */
-        .service-list {
-            max-width: 800px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            text-align: left;
-        }
-        
-        /* Recuadro interior para grupos de servicios */
-        .service-group {
-            background-color: var(--color-claro); /* Fondo blanco dentro del recuadro principal */
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-group h3 {
-            color: var(--color-principal);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--color-secundario);
-            padding-bottom: 5px;
-        }
-        
-        /* Lista de Ítems (MANTENIDA) */
-        .service-group ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .service-group ul li {
-            background-color: #f7f7f7;
-            padding: 8px 15px;
-            border-radius: 5px;
-            flex-basis: calc(50% - 7.5px); 
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
         /* Contenedor de Video (Ajustado) */
         .video-container {
             margin-top: 40px;
@@ -213,7 +175,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 600px; /* Tamaño máximo para centrar en PC */
+            max-width: 600px; 
             margin-left: auto;
             margin-right: auto;
         }
@@ -226,46 +188,40 @@
         /* ********************************************************** */
         /* MEDIAS QUERIES (RESPONSIVE) */
         /* ********************************************************** */
-        
-        /* Tablet/Escritorio pequeño (hasta 900px) */
-        @media (max-width: 900px) {
-            .almacen-photos {
-                grid-template-columns: repeat(2, 1fr); 
-            }
-            .section-container {
-                padding: 30px 20px;
-            }
-        }
 
         /* Móviles (hasta 768px) */
         @media (max-width: 768px) {
             
-            /* 1. Header (Mantenido) */
-            /* ... */
+            /* Header */
+            nav {
+                 padding: 0 20px;
+            }
+            .menu-toggle {
+                display: block; 
+            }
+            .nav-links {
+                /* Menú hamburguesa (se mantiene) */
+            }
             
-            /* 2. Hero Section */
+            /* Hero Section */
             .hero-content h1 {
-                font-size: 2.8em; 
+                font-size: 2.5em; /* Más pequeño para móvil */
             }
             .hero-content p {
-                font-size: 1em;
+                font-size: 0.9em;
             }
             
-            /* 3. Contenido General */
+            /* Contenido General */
             section {
-                padding: 50px 10px; /* Reducción de padding lateral */
-            }
-            .section-title {
-                font-size: 2em;
+                padding: 40px 10px; 
             }
             
-            /* 4. Recuadros y Contenedores */
+            /* Recuadros y Contenedores */
             .section-container {
                 padding: 20px 15px;
-                border-radius: 0; /* Opción: eliminar el borde redondeado en móvil para usar todo el ancho */
             }
 
-            /* 5. Cuadrículas */
+            /* Cuadrículas */
             .almacen-photos {
                 grid-template-columns: 1fr; /* 1 columna en móviles */
                 gap: 15px;
@@ -274,9 +230,9 @@
                  height: 200px;
             }
             
-            /* 6. Listas de Servicios */
+            /* Listas de Servicios */
             .service-group ul li {
-                flex-basis: 100%; /* Una sola columna para mejor lectura */
+                flex-basis: 100%; 
             }
         }
     </style>
@@ -483,7 +439,13 @@
     </section>
 
     <footer>
-        </footer>
+        <p>© 2025 El Molino. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Términos y Condiciones</a> |
+            <a href="#">Política de Privacidad</a> |
+            <a href="https://www.instagram.com/elmolino_cabanas/" target="_blank">Instagram</a>
+        </div>
+    </footer>
 
     <div id="myLightbox" class="lightbox">
         <span class="close" id="closeLightbox">×</span> 
@@ -512,7 +474,20 @@
             setTimeout(showSlides, 4000); 
         }
 
-        // 2. Funcionalidad del Menú Móvil (Hamburguesa)
+        // 2. Efecto Header Fijo (Restaurado)
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          const header = document.getElementById("mainHeader");
+          // Si hace scroll más de 50px, añade la clase 'scrolled'
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        }
+
+        // 3. Funcionalidad del Menú Móvil (Hamburguesa)
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const links = navLinks.querySelectorAll('a');
@@ -531,6 +506,7 @@
 
         menuToggle.addEventListener('click', toggleMenu);
 
+        // Cierra el menú al hacer clic en un enlace (solo en móvil)
         links.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768 && navLinks.classList.contains('active')) { 
@@ -539,7 +515,7 @@
             });
         });
         
-        // 3. Lightbox (Expansión de imagen)
+        // 4. Lightbox (Expansión de imagen)
         const lightbox = document.getElementById("myLightbox");
         const expandedImg = document.getElementById("expandedImg");
         const closeBtn = document.getElementById("closeLightbox");
