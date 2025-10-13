@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Molino - Cabañas y Almacén Regional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Estilos básicos para la estructura */
         :root {
@@ -27,11 +27,11 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Evita scroll horizontal no deseado */
+            overflow-x: hidden; 
         }
 
         /* ********************************************************** */
-        /* HEADER - Transparente y Flotante (Corregido y Logo Grande) */
+        /* HEADER - Transparente y Flotante */
         /* ********************************************************** */
         header {
             background-color: transparent; 
@@ -56,12 +56,10 @@
             display: flex;
             align-items: center;
             list-style: none;
-            /* Se añade un espacio para que los enlaces se distribuyan mejor */
-            flex-basis: auto; 
         }
 
         .nav-links li {
-            margin-left: 25px; /* Más espacio entre los enlaces */
+            margin-left: 25px;
         }
 
         .nav-links a {
@@ -79,20 +77,19 @@
         .logo {
             display: flex;
             align-items: center;
-            flex-grow: 1; /* Permite que el logo ocupe el espacio central */
-            justify-content: center; /* Centra el logo dentro de su espacio */
-            padding-right: 20px; /* Pequeño ajuste para que no se pegue tanto a la izquierda */
+            flex-grow: 1;
+            justify-content: center;
         }
         
         .logo img {
-            height: 60px; /* LOGO MÁS GRANDE */
-            margin-right: 15px; /* Más espacio entre el logo y el texto */
+            height: 60px; 
+            margin-right: 15px;
             filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.9)); 
         }
 
         .logo a {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8em; /* Texto del logo más grande */
+            font-size: 2.8em; 
             color: var(--color-claro);
             text-decoration: none;
             letter-spacing: 1px;
@@ -105,7 +102,7 @@
             background-color: var(--color-acento); 
             border: 2px solid transparent; 
             color: var(--color-claro);
-            padding: 8px 18px; /* Ajustado el padding */
+            padding: 8px 18px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
@@ -121,12 +118,12 @@
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow (IMÁGENES A FULL WIDTH Y ALTURA CORRECTAS) */
+        /* Sección Hero con Slideshow */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
-            width: 100%; /* Asegura que #hero ocupe el 100% del ancho */
+            width: 100%;
             overflow: hidden; 
             display: flex;
             justify-content: center;
@@ -136,7 +133,7 @@
         }
         
         .slideshow-container {
-            position: absolute; /* CLAVE: Ahora el contenedor tiene position absolute */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -147,7 +144,7 @@
             display: none; 
             width: 100%;
             height: 100%;
-            position: absolute; /* Cada slide también es absoluto */
+            position: absolute;
             top: 0;
             left: 0;
         }
@@ -155,7 +152,7 @@
         .mySlides img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que las imágenes cubran sin distorsión */
+            object-fit: cover; 
         }
 
         .hero-overlay {
@@ -176,15 +173,15 @@
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif; /* Mantener Playfair Display */
-            font-style: italic; /* Cursiva */
-            font-size: 4.5em; /* Título aún más grande */
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 4.5em; 
             margin-bottom: 10px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.9); /* Sombra más pronunciada */
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
         }
 
         .hero-content p {
-            font-size: 1.4em; /* Párrafo más grande */
+            font-size: 1.4em; 
             margin-bottom: 30px;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
         }
@@ -192,7 +189,7 @@
         .btn-hero {
             background-color: var(--color-acento);
             color: var(--color-claro);
-            padding: 14px 28px; /* Botón de hero más grande */
+            padding: 14px 28px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
@@ -216,14 +213,14 @@
         }
 
 
-        /* Estilos de Sección general (el contenido interior sigue centrado) */
+        /* Estilos de Sección general */
         section {
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Sección Ubicación - Se mantiene el 100% de ancho del fondo */
+        /* Sección Ubicación */
         #ubicacion {
             padding: 50px 0; 
             background-color: var(--color-secundario);
@@ -243,6 +240,22 @@
             text-align: center;
             margin-bottom: 40px;
             color: var(--color-principal);
+        }
+        
+        .map-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 3px solid var(--color-principal);
+            border-radius: 8px;
+            overflow: hidden; /* Para que el iframe no se desborde del borde redondeado */
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
         }
         
         /* Footer */
@@ -269,7 +282,6 @@
                 <img src="491464507_1383399089742950_3219670309350648670_n.png" alt="Logo El Molino"> 
                 <a href="#hero">El Molino</a>
             </div>
-
             <ul class="nav-links">
                 <li><a href="#cabanas">Cabañas</a></li>
                 <li><a href="#almacen">Almacén</a></li>
@@ -305,63 +317,35 @@
 
     <section id="cabanas">
         <h2 class="section-title">Nuestras Cabañas</h2>
-        <p style="text-align: center; margin-bottom: 40px;">Diseñadas para el descanso, confort y conexión con el entorno natural.</p>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-            <div class="producto-card" style="width: 45%;">
-                <h3>Modelo Rústico</h3>
-                <p>Descripciones de comodidades, capacidad y ambiente de la cabaña.</p>
-            </div>
-            <div class="producto-card" style="width: 45%;">
-                <h3>Modelo Superior</h3>
-                <p>Descripciones de comodidades, capacidad y ambiente de la cabaña.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+    <hr>
 
     <section id="almacen">
         <h2 class="section-title">El Almacén Regional</h2>
-        <p style="text-align: center; margin-bottom: 40px;">Una selección de productos artesanales y sabores auténticos de la región.</p>
-        <div id="almacen-content">
-            <div class="producto-card">
-                <h3>Vinos y Cervezas</h3>
-                <p>Descripción de la oferta de bebidas artesanales.</p>
-            </div>
-            <div class="producto-card">
-                <h3>Dulces y Conservas</h3>
-                <p>Descripción de la oferta de productos dulces y caseras.</p>
-            </div>
-            <div class="producto-card">
-                <h3>Quesos y Embutidos</h3>
-                <p>Descripción de los productos de campo frescos y locales.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+    <hr>
 
     <section id="servicios">
         <h2 class="section-title">Comodidades</h2>
-        <ul style="max-width: 600px; margin: 0 auto; list-style: none; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <li style="flex-basis: 45%;">✨ Piscina con Solarium</li>
-            <li style="flex-basis: 45%;">🍖 Zona de Parrillas</li>
-            <li style="flex-basis: 45%;">📶 Wi-Fi de alta velocidad</li>
-            <li style="flex-basis: 45%;">🚗 Estacionamiento Gratuito</li>
-            <li style="flex-basis: 45%;">🍳 Desayuno Opcional</li>
-            <li style="flex-basis: 45%;">🏞️ Amplio Parque</li>
-        </ul>
-    </section>
+        </section>
 
     <section id="ubicacion">
         <div class="ubicacion-content">
             <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
-            <div id="contacto" style="text-align: center;">
-                <p><strong>Dirección:</strong> [Añadir Dirección Completa]</p>
-                <p><strong>Teléfono:</strong> [Añadir Teléfono de Contacto]</p>
-                <p><strong>Email:</strong> [Añadir Email de Contacto]</p>
-                <div style="margin-top: 20px; height: 300px; background-color: #ccc; width: 100%; max-width: 800px; margin: 20px auto;">
-                    [Espacio para Mapa Interactivo]
+            <div id="contacto">
+                <p><strong>Dirección:</strong> Gral. Juan Madariaga, Provincia de Buenos Aires, Argentina</p>
+                <p><strong>Teléfono:</strong> +54 2267 52-4958</p>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Gral.%20Juan%20Madariaga%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -389,7 +373,7 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 4000); // Cambia de imagen cada 4 segundos (4000ms)
+            setTimeout(showSlides, 4000); // Cambia de imagen cada 4 segundos
         }
     </script>
 
