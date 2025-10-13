@@ -1,151 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>El Molino - Inicio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#d47311",
-                        "background-light": "#f8f7f6",
-                        "background-dark": "#221910",
-                    },
-                    fontFamily: {
-                        "display": ["Cinzel", "serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molino Cabañas y Almacén - Hospedaje y Productos Regionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para la estructura - El CSS completo debe ir en un archivo externo */
+        :root {
+            --color-principal: #8B4513; /* Marrón tierra/madera */
+            --color-secundario: #D2B48C; /* Beige claro/arena */
+            --color-acento: #4CAF50; /* Tonalidad verde suave (naturaleza) */
+            --color-texto: #333333;
+            --color-claro: #FFFFFF;
         }
-    </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-    /* Estilo para los ítems de lista en la nueva sección de pesca */
-    .service-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(212, 115, 17, 0.1); /* primary/10 */
-    }
-    .service-item:last-child {
-        border-bottom: none;
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between">
-<div>
-<header id="inicio" class="flex items-center justify-between p-4 text-background-dark dark:text-background-light">
-<div class="w-8"></div>
-<h2 class="text-xl font-bold text-center flex-1 tracking-widest flex items-center justify-center">
-    <img src="uploaded:image_2c62df.jpg-51ddf3d9-c394-4e61-a27f-a146615cd723" alt="Icono de El Molino" class="w-6 h-6 mr-2 rounded-full object-cover">
-    El Molino
-</h2>
-</header>
-<main>
-    <div class="relative min-h-[50vh] flex flex-col items-center justify-center bg-cover bg-center p-4 text-white" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMSrrv7XIDLjqL99iXIoVA5yrWMBbyijJoto2DiqG7njcKIoCFmvxaybd1E1-zmNWgJk7oakjjprLe9nCwv9OKfVLQlFgFH5V3SZ-YlMho9qymE_sXWve1s6Td_503Q8x5bPTkO0YqisjYajc1bpE1kfY0Pby-Pp67fT-flvl4PfHqt4f_4yaygzA-9yZYLb-XIB7IF-qns7AjKtcubGUaEKBKowurqmlSYgOdQqDwp37iOQtLBfXjIWhU0HTxLTLjSTZkyr7BHuZ1");'>
-        <h1 class="text-5xl font-bold tracking-widest mb-4">El Molino</h1>
-        <p class="text-xl text-center mb-6">Cabañas, Campo y Laguna</p>
-        <a href="contacto.html" class="px-6 py-3 bg-primary text-white rounded-lg font-bold shadow-lg hover:bg-primary/90 transition-colors uppercase tracking-wider">
-            Reservar Ahora
-        </a>
-    </div>
-    
-    <section class="py-8 px-4 text-background-dark dark:text-background-light">
-        <h2 class="text-3xl font-bold text-primary dark:text-primary mb-6 text-center">Nuestra Ubicación</h2>
-        <div class="max-w-xl mx-auto space-y-4 text-center">
-            
-            <p class="text-lg">
-                El Molino campo y laguna se encuentra en el entorno natural de:
-            </p>
-            <p class="text-2xl font-semibold">
-                Gral. Juan Madariaga, Provincia de Buenos Aires
-            </p>
 
-            <p class="text-sm pt-4">Valoración: 5 de 5 estrellas.</p>
-            
-            <a href="https://maps.google.com/?cid=5470476023225067999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-md mt-6">
-                <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Ver Ubicación en Google Maps
-            </a>
-            
-            <p class="text-sm text-gray-500 dark:text-gray-400 pt-4">
-                Haga clic en el botón de arriba para abrir la ubicación exacta y obtener direcciones.
-            </p>
-        </div>
-    </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <section id="pesca" class="py-8 px-4 text-background-dark dark:text-background-light">
-        <h2 class="text-3xl font-bold text-primary dark:text-primary mb-6 text-center">🎣 Salidas de Pesca Guiadas</h2>
-        <div class="max-w-xl mx-auto p-4 bg-white dark:bg-background-dark/50 rounded-lg shadow-lg">
-            <p class="text-center text-lg mb-4">
-                Aprovecha al máximo nuestra laguna con la ayuda de nuestros guías expertos.
-            </p>
-            <div class="space-y-2">
-                <div class="service-item">
-                    <svg class="text-primary w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 15.59l-1.41-1.41-2.59 2.59-2.59-2.59-1.41 1.41L12 21l4-4-2.59-2.59zM12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-                    <p class="font-semibold text-lg">Salidas directamente a la **Laguna**</p>
-                </div>
-                <div class="service-item">
-                    <svg class="text-primary w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2zm0-14h2v12h-2z"/></svg>
-                    <p>Provisión de **Mojarras** (Carnada viva)</p>
-                </div>
-                <div class="service-item">
-                    <svg class="text-primary w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2zm0-14h2v12h-2z"/></svg>
-                    <p>Carnadas **Fileteadas** preparadas por expertos</p>
-                </div>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-texto);
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            scroll-behavior: smooth;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: var(--color-principal);
+            color: var(--color-claro);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: var(--color-claro);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul a {
+            color: var(--color-claro);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* Estilos de Botón principal (similar a 'Reserva ahora') */
+        .btn-principal {
+            background-color: var(--color-acento);
+            color: var(--color-claro);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-principal:hover {
+            background-color: #388E3C; /* Verde oscuro al pasar el ratón */
+        }
+
+        /* Sección Hero */
+        #hero {
+            background: url('ruta/a/tu/imagen-principal.jpg') no-repeat center center/cover; /* Usar una imagen de cabañas y paisaje */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--color-claro);
+            position: relative;
+            margin-top: 60px; /* Para que no quede bajo el header fijo */
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos de Sección general */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-principal);
+        }
+        
+        /* Contenido del Almacén */
+        #almacen-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .producto-card {
+            background: var(--color-secundario);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .producto-card h3 {
+            color: var(--color-principal);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-texto);
+            color: var(--color-secundario);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: var(--color-secundario);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#hero">Molino Cabañas y Almacén</a>
             </div>
-            <a href="contacto.html" class="mt-6 inline-block w-full text-center px-6 py-3 bg-primary text-white rounded-lg font-bold shadow-lg hover:bg-primary/90 transition-colors uppercase tracking-wider">
-                Consultar por Tarifas y Disponibilidad
-            </a>
+            <ul>
+                <li><a href="#cabanas">Cabañas</a></li>
+                <li><a href="#almacen">Almacén</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Tu Refugio en la Naturaleza</h1>
+            <p>Descubre el encanto de nuestras cabañas y los sabores de nuestro almacén regional.</p>
+            <a href="#cabanas" class="btn-principal">Ver Cabañas</a>
         </div>
     </section>
-    </main>
-</div>
-<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm border-t border-primary/20 dark:border-primary/30">
-<nav class="flex justify-around items-center p-2">
-<a class="flex flex-col items-center gap-1 text-primary" href="index.html">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"></path>
-</svg>
-<span class="text-xs font-semibold">Inicio</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60 hover:text-primary dark:hover:text-primary transition-colors" href="cabanas.html">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M208,72H24V48a8,8,0,0,0-8,48V208a8,8,0,0,0,16,0V176H232v32a8,8,0,0,0,16,0V112A40,40,0,0,0,208,72ZM24,88H96v72H24Zm88,72V88h96a24,24,0,0,1,24,24v48Z"></path>
-</svg>
-<span class="text-xs font-semibold">Cabañas</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60 hover:text-primary dark:hover:text-primary transition-colors" href="almacen.html">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96v16a40,40,0,0,0,16,32v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V144a40,40,0,0,0,16-32ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-48,0v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm-8-72a24,24,0,0,1-24-24v-8h48v8A24,24,0,0,1,192,136Z"></path>
-</svg>
-<span class="text-xs font-semibold">Almacén</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60 hover:text-primary dark:hover:text-primary transition-colors" href="contacto.html">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path>
-</svg>
-<span class="text-xs font-semibold">Contacto</span>
-</a>
-</nav>
-<div class="h-safe-area-bottom"></div>
-</footer>
-</div>
-</body></html>
+
+    <section id="cabanas">
+        <h2 class="section-title">Nuestras Cabañas</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Diseñadas para el descanso, confort y conexión con el entorno natural.</p>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div class="producto-card" style="width: 45%;">
+                <h3>Cabaña Estándar</h3>
+                <p>Capacidad para 4 personas. Cocina completa, parrilla individual y vista al jardín.</p>
+            </div>
+            <div class="producto-card" style="width: 45%;">
+                <h3>Cabaña Premium</h3>
+                <p>Capacidad para 6 personas. Jacuzzi, salamandra y balcón privado con la mejor vista.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
+    <section id="almacen">
+        <h2 class="section-title">El Almacén Regional</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Una selección de productos artesanales y sabores auténticos de la región.</p>
+        <div id="almacen-content">
+            <div class="producto-card">
+                <h3>Vinos y Cervezas</h3>
+                <p>Bodegas seleccionadas y cervezas artesanales locales.</p>
+            </div>
+            <div class="producto-card">
+                <h3>Dulces y Conservas</h3>
+                <p>Mermeladas caseras, miel pura y conservas de estación.</p>
+            </div>
+            <div class="producto-card">
+                <h3>Quesos y Embutidos</h3>
+                <p>Productos de campo frescos y de productores de la zona.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
+    <section id="servicios">
+        <h2 class="section-title">Comodidades</h2>
+        <ul style="max-width: 600px; margin: 0 auto; list-style: none; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <li style="flex-basis: 45%;">✨ Piscina con Solarium</li>
+            <li style="flex-basis: 45%;">🍖 Zona de Parrillas</li>
+            <li style="flex-basis: 45%;">📶 Wi-Fi de alta velocidad</li>
+            <li style="flex-basis: 45%;">🚗 Estacionamiento Gratuito</li>
+            <li style="flex-basis: 45%;">🍳 Desayuno Opcional</li>
+            <li style="flex-basis: 45%;">🏞️ Amplio Parque</li>
+        </ul>
+    </section>
+
+    <section id="ubicacion" style="background-color: var(--color-secundario); padding: 50px 20px;">
+        <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
+        <div id="contacto" style="text-align: center;">
+            <p><strong>Dirección:</strong> Avenida Principal S/N, Localidad, Provincia.</p>
+            <p><strong>Teléfono:</strong> +54 9 11 XXXX-XXXX</p>
+            <p><strong>Email:</strong> info@molinoyalmacen.com</p>
+            <div style="margin-top: 20px; height: 300px; background-color: #ccc; width: 100%; max-width: 800px; margin: 20px auto;">
+                [Espacio para Mapa Interactivo]
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Molino Cabañas y Almacén. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Términos y Condiciones</a> |
+            <a href="#">Política de Privacidad</a> |
+            <a href="https://www.instagram.com/tumolino" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
