@@ -249,6 +249,24 @@
             margin-top: 20px;
         }
         
+        /* Contenedores de Texto de Políticas */
+        .policy-content h3 {
+            color: var(--color-principal);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.3);
+            padding-bottom: 5px;
+        }
+        .policy-content p, .policy-content ul {
+            margin-bottom: 15px;
+            color: var(--color-texto);
+        }
+        .policy-content ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
         /* Cuadrícula de Imágenes */
         .almacen-photos {
             display: grid;
@@ -408,6 +426,14 @@
             text-decoration: none;
             cursor: pointer;
         }
+        
+        /* ESTILOS ESPECÍFICOS PARA TÉRMINOS Y PRIVACIDAD */
+        #terminos, #privacidad {
+            min-height: 50vh; 
+            padding-top: 120px; 
+            background-color: var(--color-claro);
+        }
+
 
         /* ********************************************************** */
         /* MEDIAS QUERIES (RESPONSIVE) */
@@ -706,13 +732,79 @@
             </div>
         </div>
     </section>
+    
+    <section id="terminos" class="policy-section">
+        <h2 class="section-title">Términos y Condiciones</h2>
+        <div class="section-container policy-content" style="background-color: #fcfcfc;">
+            
+            <h3>1. Aceptación de los Términos</h3>
+            <p>Al reservar o utilizar los servicios de El Molino (Cabañas, Almacén, Buffet, Servicio de Pesca) usted acepta estos Términos y Condiciones, obligándose a cumplirlos. Estos términos son aplicables a todos los huéspedes y visitantes.</p>
 
+            <h3>2. Reservas y Pagos</h3>
+            <ul>
+                <li><strong>Confirmación:</strong> Toda reserva se considera confirmada una vez que se ha abonado el porcentaje de seña acordado, no reembolsable en caso de cancelación por parte del huésped.</li>
+                <li><strong>Modalidad de Pago:</strong> Aceptamos transferencias bancarias y efectivo. El saldo restante debe abonarse al momento del check-in.</li>
+                <li><strong>Precios:</strong> Los precios de los servicios de alojamiento y pesca están sujetos a cambios sin previo aviso, salvo para las reservas ya confirmadas.</li>
+            </ul>
+
+            <h3>3. Política de Cancelación y Modificación</h3>
+            <ul>
+                <li><strong>Cancelación por el Huésped:</strong> La seña no es reembolsable. Si la cancelación se realiza con menos de 72 horas del check-in, se podrá retener el 100% del valor total de la estadía o servicio contratado.</li>
+                <li><strong>Modificación de Fechas:</strong> Sujeta a disponibilidad y puede generar un ajuste de tarifa, especialmente en temporada alta. Se debe solicitar con al menos 7 días de antelación.</li>
+            </ul>
+
+            <h3>4. Uso de las Cabañas y Normas de Convivencia</h3>
+            <ul>
+                <li><strong>Horarios:</strong> Check-in a partir de las 14:00hs. Check-out antes de las 10:00hs.</li>
+                <li><strong>Capacidad Máxima:</strong> La capacidad máxima de cada cabaña debe respetarse estrictamente. El ingreso de personas adicionales no informadas está prohibido.</li>
+                <li><strong>Mascotas:</strong> Las mascotas son bienvenidas bajo previa consulta y aprobación, y deben permanecer con correa en las áreas comunes. El dueño es responsable de cualquier daño o molestia.</li>
+                <li><strong>Daños:</strong> El huésped es responsable de los daños causados a la cabaña o a las instalaciones de El Molino durante su estadía.</li>
+                <li><strong>Servicio de Pesca:</strong> Los usuarios del servicio de pesca deben seguir las indicaciones del guía y utilizar los equipos de manera responsable. El Molino no se hace responsable por accidentes causados por la negligencia del usuario.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="privacidad" class="policy-section">
+        <h2 class="section-title">Política de Privacidad</h2>
+        <div class="section-container policy-content" style="background-color: #fcfcfc;">
+            
+            <h3>1. Información Recopilada</h3>
+            <p>El Molino recopila información necesaria para procesar las reservas y mejorar la experiencia del cliente. Esto incluye:</p>
+            <ul>
+                <li>Nombre completo y DNI o Pasaporte.</li>
+                <li>Información de contacto (teléfono, correo electrónico).</li>
+                <li>Fechas de reserva y servicios contratados.</li>
+            </ul>
+
+            <h3>2. Uso de la Información</h3>
+            <p>Utilizamos la información recopilada exclusivamente para:</p>
+            <ul>
+                <li>Gestionar y confirmar su reserva de cabaña o servicio de pesca.</li>
+                <li>Comunicarnos con usted sobre su estadía o consultas.</li>
+                <li>Cumplir con las obligaciones legales y de seguridad locales.</li>
+                <li>Mejorar nuestros servicios y ofertas.</li>
+            </ul>
+
+            <h3>3. Compartir Información</h3>
+            <p>El Molino se compromete a no vender, alquilar ni divulgar su información personal a terceros, excepto en los siguientes casos:</p>
+            <ul>
+                <li>Si es requerido por ley o por orden judicial.</li>
+                <li>Para proteger los derechos, la propiedad o la seguridad de El Molino, nuestros clientes u otros.</li>
+            </ul>
+
+            <h3>4. Seguridad de los Datos</h3>
+            <p>Adoptamos medidas de seguridad administrativas, técnicas y físicas para proteger la información personal contra pérdida, robo y acceso no autorizado. Sin embargo, ninguna transmisión de datos por Internet es 100% segura.</p>
+            
+            <h3>5. Cookies y Datos Web</h3>
+            <p>Nuestro sitio web puede utilizar cookies para mejorar la navegación y analizar el tráfico web de forma anónima (por ejemplo, Google Analytics). Al usar nuestro sitio, usted consiente el uso de estas cookies.</p>
+        </div>
+    </section>
     <footer>
         <p>© 2025 El Molino. Todos los derechos reservados.</p>
         <p style="margin-top: 5px;">Diseño web de Techne Nest</p>
         <div class="footer-links">
-            <a href="#">Términos y Condiciones</a> |
-            <a href="#">Política de Privacidad</a> |
+            <a href="#terminos">Términos y Condiciones</a> |
+            <a href="#privacidad">Política de Privacidad</a> |
             <a href="https://www.instagram.com/elmolino_cabanas/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </footer>
