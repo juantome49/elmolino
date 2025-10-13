@@ -25,9 +25,8 @@
             font-family: 'Roboto', sans-serif;
             color: var(--color-texto);
             line-height: 1.6;
-            background-color: #f7f7f7;
+            background-color: #eaeaea; /* COLOR DE FONDO NEUTRO para que el borde blanco desaparezca */
             scroll-behavior: smooth;
-            /* CLAVE: Evita barras de desplazamiento horizontal por el 100vw */
             overflow-x: hidden; 
         }
 
@@ -118,17 +117,14 @@
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow (CORRECCIÓN FINAL FULL WIDTH) */
+        /* Sección Hero (REESTABLECIDA Y CENTRADA) */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
-            
-            /* CLAVE DE CORRECCIÓN: Centrado de elemento Full-Width */
-            width: 100vw; 
-            left: 50%;
-            transform: translateX(-50%);
-            /* FIN CLAVE DE CORRECCIÓN */
+            width: 100%; /* El width 100% ahora respeta el contenedor padre (body) */
+            max-width: none; /* Aseguramos que no haya un max-width que lo limite si no lo tiene */
+            margin: 0 auto; /* Centrado */
             
             overflow: hidden; 
             display: flex;
@@ -321,8 +317,6 @@
             <a href="#cabanas" class="btn-hero">Ver Cabañas</a>
         </div>
     </section>
-
-<hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
 
     <section id="cabanas">
         <h2 class="section-title">Nuestras Cabañas</h2>
