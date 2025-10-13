@@ -13,7 +13,6 @@
             --color-acento: #4CAF50; /* Tonalidad verde suave (naturaleza) */
             --color-texto: #333333;
             --color-claro: #FFFFFF;
-            --color-nav-bg: #8B4513; /* Color de fondo de la navegación principal si se moviera */
         }
 
         * {
@@ -31,57 +30,86 @@
         }
 
         /* ********************************************************** */
-        /* Nuevo Estilo de Navegación (flotante, encima del contenido) */
+        /* HEADER - Estilo Transparente y Flotante (Como Cabaña del Lago) */
         /* ********************************************************** */
-        .floating-nav {
-            background-color: var(--color-nav-bg); 
-            padding: 10px 0;
-            position: sticky; /* Se mantendrá visible al hacer scroll */
+        header {
+            background-color: transparent; /* Fondo transparente */
+            padding: 20px 0;
+            position: absolute; /* Absoluto para flotar sobre el hero */
+            width: 100%;
             top: 0;
-            z-index: 900;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            text-align: center;
+            left: 0;
+            z-index: 2000; /* Alto z-index para estar encima de todo */
         }
 
-        .floating-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
+        nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px; /* Más padding para los costados */
         }
 
-        .floating-nav ul li {
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            flex-grow: 1; /* Permite que el espacio se expanda */
+        }
+
+        .nav-left {
+            justify-content: flex-start;
+        }
+
+        .nav-right {
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
             margin: 0 15px;
         }
 
-        .floating-nav ul a {
+        .nav-links a {
             color: var(--color-claro);
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para legibilidad */
         }
 
-        .floating-nav ul a:hover {
+        .nav-links a:hover {
             color: var(--color-secundario);
         }
-        
-        /* Estilos de Botón principal (similar a 'Reserva ahora') */
-        .btn-principal {
-            background-color: var(--color-acento);
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em; /* Logo más grande y centrado */
             color: var(--color-claro);
-            padding: 8px 15px; /* Ajuste el padding para el menú flotante */
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+            margin: 0 40px; /* Margen para separarlo de los enlaces */
+        }
+
+        /* Estilos de Botón principal (Reservar Ahora) */
+        .btn-principal {
+            background-color: transparent;
+            border: 2px solid var(--color-claro); /* Borde blanco */
+            color: var(--color-claro);
+            padding: 8px 15px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
+            text-shadow: none; /* Quitamos la sombra del texto en el botón */
         }
 
         .btn-principal:hover {
-            background-color: #388E3C; /* Verde oscuro al pasar el ratón */
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo sutil al pasar el ratón */
+            color: var(--color-claro);
         }
-        
+
         /* ********************************************************** */
         /* Sección Hero con Slideshow (ocupando todo el ancho) */
         /* ********************************************************** */
@@ -93,9 +121,8 @@
             align-items: center;
             text-align: center;
             color: var(--color-claro);
-            /* ELIMINAMOS EL MARGEN SUPERIOR QUE ERA DE 60PX */
             overflow: hidden; 
-            width: 100vw; /* Asegura que ocupe todo el ancho */
+            width: 100vw; 
         }
 
         .slideshow-container {
@@ -118,9 +145,8 @@
             object-fit: cover; 
         }
 
-        /* Capa de superposición más fuerte para garantizar el contraste del texto */
         .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.5); /* Oscurecido ligeramente más */
+            background-color: rgba(0, 0, 0, 0.3); /* Capa de opacidad más suave */
             position: absolute;
             top: 0;
             left: 0;
@@ -138,14 +164,32 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.8); */ /* Opcional: para mejor legibilidad */
+            font-size: 4em; /* Título más grande para impacto */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9); /* Sombra fuerte para legibilidad */
+            font-style: italic; /* Similar al estilo de fuente de la referencia */
         }
 
         .hero-content p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+        
+        /* Estilos de Botón dentro del Hero */
+        .btn-hero {
+            background-color: var(--color-acento);
+            color: var(--color-claro);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-hero:hover {
+            background-color: #388E3C;
         }
 
         /* Animación Fade */
@@ -160,7 +204,7 @@
         }
 
 
-        /* Estilos de Sección general */
+        /* Estilos de Sección general (manteniendo las secciones debajo) */
         section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -212,7 +256,26 @@
     </style>
 </head>
 <body>
-    
+
+    <header>
+        <nav>
+            <ul class="nav-links nav-left">
+                <li><a href="#cabanas">Cabañas</a></li>
+                <li><a href="#almacen">Almacén</a></li>
+            </ul>
+
+            <div class="logo">
+                <a href="#hero">El Molino</a>
+            </div>
+
+            <ul class="nav-links nav-right">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section id="hero">
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -230,21 +293,11 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>El Molino: Tu Refugio en la Naturaleza</h1>
+            <h1 style="font-family: 'Times New Roman', serif;">Vive el encanto de El Molino</h1> 
             <p>Cabañas para el descanso y sabores auténticos en nuestro almacén regional.</p>
-            <a href="#cabanas" class="btn-principal">Ver Cabañas</a>
+            <a href="#cabanas" class="btn-hero">Ver Cabañas</a>
         </div>
     </section>
-
-    <div class="floating-nav">
-        <ul>
-            <li><a href="#cabanas">Cabañas</a></li>
-            <li><a href="#almacen">Almacén</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-            <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
-        </ul>
-    </div>
 
     <section id="cabanas">
         <h2 class="section-title">Nuestras Cabañas</h2>
