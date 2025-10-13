@@ -240,6 +240,23 @@
             color: var(--color-principal);
             font-weight: 700;
         }
+        /* Estilo específico para el contenedor de video en Almacén */
+        .video-container {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 700px; /* Limita el ancho del video para que no sea demasiado grande */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
 
         /* Estilos específicos para las listas de servicios */
         .service-list {
@@ -452,8 +469,11 @@
         <h2 class="section-title">Almacén y Quincho Buffet</h2>
         <p style="text-align: center; margin-bottom: 40px;">Disfruta de nuestros sabores regionales en el almacén o con el servicio de quincho buffet.</p>
         
-        <div class="gallery-placeholder">
-            Coloca aquí las fotos del Almacén, el Quincho, Comidas, etc.
+        <div class="video-container">
+             <video autoplay loop muted controls playsinline>
+                <source src="fotos/VID-20251012-WA0006.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
         </div>
         
         <div class="service-list">
