@@ -26,30 +26,23 @@
             font-family: 'Roboto', sans-serif;
             color: var(--color-texto);
             line-height: 1.6;
-            background-color: #eaeaea; 
+            background-color: #eaeaea; /* Fondo gris claro (Original) */
             scroll-behavior: smooth;
             overflow-x: hidden; 
         }
 
         /* ********************************************************** */
-        /* HEADER y NAV (Adaptable) */
+        /* HEADER y NAV (Diseño Original: Transparente Fijo) */
         /* ********************************************************** */
         header {
-            background-color: transparent; 
+            background-color: transparent; /* Transparente fijo */
             padding: 20px 0;
-            position: fixed; /* Fijo para que siempre esté visible */
+            position: absolute; /* Vuelve a 'absolute' para que se desplace con el contenido */
             width: 100%;
             top: 0;
             left: 0;
             z-index: 2000; 
-            transition: background-color 0.4s ease;
-        }
-        
-        /* Efecto de cambio de fondo al hacer scroll */
-        header.scrolled {
-            background-color: rgba(139, 69, 19, 0.95); /* Fondo sólido al hacer scroll */
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            /* SE ELIMINA LA CLASE 'scrolled' Y LA TRANSICIÓN DE COLOR */
         }
 
         nav {
@@ -160,6 +153,9 @@
             text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
         }
 
+        /* Slideshow, Animación Fade y Overlays... (MANTENIDOS) */
+        /* ... */
+
         section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -174,7 +170,6 @@
             color: var(--color-principal);
         }
 
-        /* Cuadrícula de 3 columnas (por defecto en PC) */
         .almacen-photos {
             display: grid;
             grid-template-columns: repeat(3, 1fr); 
@@ -195,12 +190,10 @@
             cursor: pointer; 
         }
 
-        /* Listas de servicios (2 columnas en PC) */
         .service-group ul li {
             flex-basis: calc(50% - 7.5px); 
         }
         
-        /* Estilo para el enlace de WhatsApp en Contacto */
         .whatsapp-link {
             text-decoration: none;
             color: inherit; 
@@ -223,10 +216,10 @@
                 padding: 0 20px;
             }
             .almacen-photos {
-                grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+                grid-template-columns: repeat(2, 1fr); 
             }
             .service-group ul li {
-                 flex-basis: calc(100% / 2 - 7.5px); /* Asegura dos columnas si el espacio lo permite */
+                 flex-basis: calc(100% / 2 - 7.5px); 
             }
         }
 
@@ -300,7 +293,7 @@
             
             /* 5. Listas de Servicios */
             .service-group ul li {
-                flex-basis: 100%; /* Una sola columna para mejor lectura */
+                flex-basis: 100%; 
             }
             
             /* 6. Mapa */
@@ -308,8 +301,6 @@
                 height: 350px;
             }
         }
-        /* Otros estilos (Slideshow, Lightbox, etc.) - Se mantienen por ser genéricos */
-        /* ... (styles for slideshow, fade animation, lightbox, etc. are implicitly retained from previous versions for brevity) ... */
     </style>
 </head>
 <body>
@@ -526,7 +517,7 @@
 
     <script>
         // **********************************************************
-        // JS para Carrusel, Header, Lightbox y Menú Móvil
+        // JS para Carrusel, Header (Fijo), Lightbox y Menú Móvil
         // **********************************************************
 
         // 1. Carrusel de Héroe (Slideshow)
@@ -541,25 +532,15 @@
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}
-            // Asegura que la animación fade sea visible en móviles también
             slides[slideIndex-1].style.display = "block";
+            // Asegura que la animación fade sea visible
             slides[slideIndex-1].classList.add("fade");
             setTimeout(showSlides, 4000); 
         }
 
-        // 2. Efecto Header Fijo
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-          const header = document.getElementById("mainHeader");
-          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
-          }
-        }
+        // NOTA: Se ha ELIMINADO la función scrollFunction() para mantener el diseño original transparente
         
-        // 3. Funcionalidad del Menú Móvil (Hamburguesa)
+        // 2. Funcionalidad del Menú Móvil (Hamburguesa)
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         const links = navLinks.querySelectorAll('a');
@@ -567,7 +548,7 @@
         function toggleMenu() {
             navLinks.classList.toggle('active');
             const icon = menuToggle.querySelector('i');
-            // Usamos un simple toggle para que funcione como switch
+            // Cambia el ícono
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
@@ -579,19 +560,17 @@
 
         menuToggle.addEventListener('click', toggleMenu);
 
-        // Cierra el menú al hacer clic en un enlace o en el botón de reserva
+        // Cierra el menú al hacer clic en un enlace (solo en móvil)
         links.forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    // Solo cierra si la pantalla es móvil (para evitar cerrar en desktop)
-                    if (window.innerWidth <= 768) { 
-                        toggleMenu();
-                    }
+                // Comprobación de tamaño de pantalla para asegurar que solo cierre en móvil
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) { 
+                    toggleMenu();
                 }
             });
         });
         
-        // 4. Lightbox (Expansión de imagen)
+        // 3. Lightbox (Expansión de imagen)
         const lightbox = document.getElementById("myLightbox");
         const expandedImg = document.getElementById("expandedImg");
         const closeBtn = document.getElementById("closeLightbox");
