@@ -27,7 +27,7 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            overflow-x: hidden; 
+            overflow-x: hidden; /* CLAVE: Evita el scroll horizontal causado por 100vw */
         }
 
         /* ********************************************************** */
@@ -78,7 +78,8 @@
             display: flex;
             align-items: center;
             flex-grow: 1;
-            justify-content: center;
+            justify-content: flex-start; /* Alineación a la izquierda dentro del nav */
+            
         }
         
         .logo img {
@@ -118,12 +119,13 @@
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow */
+        /* Sección Hero con Slideshow (CORRECCIÓN FINAL FULL WIDTH) */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
-            width: 100%;
+            width: 100vw; /* Usar Viewport Width para asegurar el 100% de la pantalla */
+            margin-left: calc(-50vw + 50%); /* Centra el elemento en el viewport a pesar de 100vw */
             overflow: hidden; 
             display: flex;
             justify-content: center;
@@ -249,7 +251,7 @@
             margin: 20px auto;
             border: 3px solid var(--color-principal);
             border-radius: 8px;
-            overflow: hidden; /* Para que el iframe no se desborde del borde redondeado */
+            overflow: hidden; 
         }
         
         .map-container iframe {
@@ -315,6 +317,56 @@
         </div>
     </section>
 
+    <section id="cabanas">
+        <h2 class="section-title">Nuestras Cabañas</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Diseñadas para el descanso, confort y conexión con el entorno natural.</p>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div class="producto-card" style="width: 45%;">
+                <h3>Modelo Rústico</h3>
+                <p>Descripciones de comodidades, capacidad y ambiente de la cabaña.</p>
+            </div>
+            <div class="producto-card" style="width: 45%;">
+                <h3>Modelo Superior</h3>
+                <p>Descripciones de comodidades, capacidad y ambiente de la cabaña.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
+    <section id="almacen">
+        <h2 class="section-title">El Almacén Regional</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Una selección de productos artesanales y sabores auténticos de la región.</p>
+        <div id="almacen-content">
+            <div class="producto-card">
+                <h3>Vinos y Cervezas</h3>
+                <p>Descripción de la oferta de bebidas artesanales.</p>
+            </div>
+            <div class="producto-card">
+                <h3>Dulces y Conservas</h3>
+                <p>Descripción de la oferta de productos dulces y caseras.</p>
+            </div>
+            <div class="producto-card">
+                <h3>Quesos y Embutidos</h3>
+                <p>Descripción de los productos de campo frescos y locales.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--color-secundario); max-width: 1000px; margin: 0 auto;">
+
+    <section id="servicios">
+        <h2 class="section-title">Comodidades</h2>
+        <ul style="max-width: 600px; margin: 0 auto; list-style: none; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <li style="flex-basis: 45%;">✨ Piscina con Solarium</li>
+            <li style="flex-basis: 45%;">🍖 Zona de Parrillas</li>
+            <li style="flex-basis: 45%;">📶 Wi-Fi de alta velocidad</li>
+            <li style="flex-basis: 45%;">🚗 Estacionamiento Gratuito</li>
+            <li style="flex-basis: 45%;">🍳 Desayuno Opcional</li>
+            <li style="flex-basis: 45%;">🏞️ Amplio Parque</li>
+        </ul>
+    </section>
+
     <section id="ubicacion">
         <div class="ubicacion-content">
             <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
@@ -324,7 +376,7 @@
                 
                 <div class="map-container">
                     <iframe 
-                        src="https://maps.google.com/maps?q=El%20molino%20campo%20y%20laguna%20Gral.%20Juan%20Madariaga&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                        src="http://googleusercontent.com/maps.google.com/7" 
                         frameborder="0" 
                         scrolling="no" 
                         marginheight="0" 
