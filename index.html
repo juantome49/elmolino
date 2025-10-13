@@ -60,7 +60,7 @@
             padding: 0 40px; 
         }
 
-        /* Se ajusta el logo para ignorar el <img> vacío y usar el <a> */
+        /* AJUSTE LOGO: Se oculta la imagen para evitar conflictos, dejando solo el texto. */
         .logo {
             display: flex;
             align-items: center;
@@ -71,7 +71,7 @@
 
         .logo a {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5em; /* Ligeramente más pequeño para mejor balance */
+            font-size: 2.5em; 
             color: var(--color-claro);
             text-decoration: none;
             letter-spacing: 1px;
@@ -87,7 +87,7 @@
         }
 
         .nav-links li {
-            margin-left: 25px; /* Espaciado entre links */
+            margin-left: 25px; 
         }
         
         .nav-links a {
@@ -117,13 +117,13 @@
         }
         
         .btn-principal:hover {
-            background-color: #3e8e41 !important; /* Verde oscuro al pasar el mouse */
+            background-color: #3e8e41 !important; 
             color: var(--color-claro) !important;
         }
 
-        /* Ícono de Hamburguesa (Manteniendo la visibilidad inicial) */
+        /* Ícono de Hamburguesa */
         .menu-toggle {
-            display: none; /* Oculto en escritorio */
+            display: none; 
             color: var(--color-claro);
             font-size: 1.5em;
             cursor: pointer;
@@ -132,12 +132,13 @@
         }
         
         /* ********************************************************** */
-        /* Sección Hero */
+        /* Sección Hero (IMÁGENES CUBREN 100% ANCHO Y ALTO) */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
             width: 100%; 
+            max-width: none; 
             margin: 0; 
             overflow: hidden; 
             display: flex;
@@ -157,11 +158,11 @@
         }
         
         .mySlides img {
-            object-fit: cover; 
-            filter: brightness(0.7); /* Oscurecer imagen para mejor legibilidad */
+            object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
+            filter: brightness(0.7); 
         }
         
-        .hero-overlay { /* Mantenemos una capa de overlay, aunque la opacidad se maneje en la imagen */
+        .hero-overlay { 
             position: absolute;
             top: 0;
             left: 0;
@@ -179,7 +180,7 @@
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 4.8em; /* Un poco más grande */
+            font-size: 4.8em; 
             margin-bottom: 20px; 
             text-shadow: 2px 2px 8px rgba(0,0,0,1);
         }
@@ -206,7 +207,7 @@
         }
         
         .btn-hero:hover {
-            background-color: #A0522D; /* Tonalidad más clara de marrón */
+            background-color: #A0522D; 
             transform: translateY(-2px);
         }
         
@@ -251,7 +252,7 @@
         /* Cuadrícula de Imágenes */
         .almacen-photos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Más flexible */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 15px;
             max-width: 100%; 
             margin: 40px auto;
@@ -260,7 +261,7 @@
         
         .almacen-photos img {
             width: 100%;
-            height: 250px; /* Un poco más de altura */
+            height: 250px; 
             object-fit: cover; 
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -279,10 +280,10 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 700px; /* Ligeramente más grande */
+            max-width: 700px; 
             margin-left: auto;
             margin-right: auto;
-            aspect-ratio: 16 / 9; /* Asegura un ratio de video estándar */
+            aspect-ratio: 16 / 9; 
         }
         .video-container video {
             width: 100%;
@@ -290,17 +291,17 @@
             display: block;
         }
         
-        /* Estilos para las Listas de Servicios (Clave) */
+        /* Estilos para las Listas de Servicios */
         .service-list {
             display: flex;
             justify-content: space-around;
             gap: 30px;
             margin-top: 30px;
-            flex-wrap: wrap; /* Para que bajen en móvil */
+            flex-wrap: wrap; 
         }
         
         .service-group {
-            flex-basis: 45%; /* Ocupa casi la mitad del espacio */
+            flex-basis: 45%; 
             min-width: 300px; 
         }
         
@@ -316,7 +317,7 @@
         .service-group ul {
             list-style: none;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 columnas para la lista de items */
+            grid-template-columns: 1fr 1fr; 
             gap: 10px;
             padding: 0;
         }
@@ -329,7 +330,7 @@
         }
         
         .service-group ul li::before {
-            content: "\f00c"; /* Icono de checkmark */
+            content: "\f00c"; 
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             color: var(--color-acento);
@@ -425,7 +426,7 @@
             }
             
             .menu-toggle {
-                display: block; /* Muestra el ícono de hamburguesa */
+                display: block; 
             }
             
             .nav-links {
@@ -436,13 +437,13 @@
                 width: 70%; 
                 background-color: var(--color-principal);
                 flex-direction: column;
-                transform: translateX(100%); /* Oculto fuera de pantalla */
+                transform: translateX(100%); 
                 padding-top: 100px;
                 box-shadow: -2px 0 10px rgba(0,0,0,0.5);
             }
             
             .nav-links.active {
-                transform: translateX(0); /* Muestra el menú */
+                transform: translateX(0); 
             }
             
             .nav-links li {
@@ -481,7 +482,7 @@
 
             /* Cuadrículas */
             .almacen-photos {
-                grid-template-columns: 1fr; /* 1 columna en móviles */
+                grid-template-columns: 1fr; 
                 gap: 15px;
             }
             .almacen-photos img {
@@ -500,7 +501,7 @@
             }
             
             .service-group ul {
-                grid-template-columns: 1fr; /* 1 columna en móvil */
+                grid-template-columns: 1fr; 
             }
         }
     </style>
@@ -524,7 +525,7 @@
                 <li><a href="#buffet">Buffet</a></li>
                 <li><a href="#servicios">Pesca</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="https://wa.me/542267524958?text=Hola%2C%20estoy%20interesado%2Fa%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
+                <li><a href="https://wa.me/542267524958?text=Hola%2C%20estoy%2F%20a%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
                        target="_blank" 
                        class="btn-principal">Reservar Ahora</a></li>
             </ul>
@@ -558,7 +559,7 @@
         <h2 class="section-title">Cabañas en Alquiler</h2>
         
         <div class="section-container">
-            <p style="text-align: center; margin-bottom: 25px;">Nuestras cabañas están diseñadas para el **descanso y confort**, ofreciendo todo lo necesario para tu estadía.</p>
+            <p style="text-align: center; margin-bottom: 25px;">Nuestras cabañas están diseñadas para el <strong>descanso y confort</strong>, ofreciendo todo lo necesario para tu estadía.</p>
             
             <div class="almacen-photos">
                 <img class="expandable-img" src="fotos/IMG-20251012-WA0022.jpg" alt="Vista exterior de la cabaña">
@@ -599,7 +600,7 @@
         <h2 class="section-title">Almacén Regional</h2>
         
         <div class="section-container">
-            <p style="text-align: center; margin-bottom: 25px;">Encuentra productos locales, bebidas y todo lo necesario en nuestro **auténtico almacén**.</p>
+             <p style="text-align: center; margin-bottom: 25px;">Encuentra productos locales, bebidas y todo lo necesario en nuestro <strong>auténtico almacén</strong>.</p>
             
             <div class="almacen-photos">
                 <img class="expandable-img" src="fotos/IMG-20251012-WA0026.jpg" alt="Interior del almacén 1">
@@ -617,7 +618,7 @@
         <h2 class="section-title">Quincho Buffet y Sabores Regionales</h2>
         
         <div class="section-container">
-            <p style="text-align: center; margin-bottom: 25px;">Disfruta de nuestro quincho buffet con **asado**, ensaladas frescas y **postres caseros**.</p>
+             <p style="text-align: center; margin-bottom: 25px;">Disfruta de nuestro quincho buffet con <strong>asado</strong>, ensaladas frescas y <strong>postres caseros</strong>.</p>
 
             <div class="video-container">
                  <video autoplay loop muted controls playsinline>
@@ -655,7 +656,7 @@
         <h2 class="section-title">Servicio de Pesca</h2>
         
         <div class="section-container">
-            <p style="text-align: center; margin-bottom: 40px;">Vive la aventura con nuestro completo **servicio de pesca** a solo 7km de la laguna.</p>
+             <p style="text-align: center; margin-bottom: 40px;">Vive la aventura con nuestro completo <strong>servicio de pesca</strong> a solo 7km de la laguna.</p>
             
             <div class="gallery-placeholder" style="text-align: center; padding: 50px; background-color: #fcfcfc; border-radius: 8px; margin-bottom: 20px; border: 1px dashed var(--color-principal);">
                 *Coloca aquí las fotos de Pesca, Truckers, Salidas Guiadas, etc.*
@@ -684,7 +685,7 @@
                 <p><strong>Plus Code:</strong> X2W9+7H</p>
                 <p>
                     <strong>Teléfono:</strong> 
-                    <a href="https://wa.me/542267524958?text=Hola%2C%20estoy%20interesado%2Fa%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
+                    <a href="https://wa.me/542267524958?text=Hola%2C%20estoy%2F%20a%20en%20reservar%20una%20caba%C3%B1a%20en%20El%20Molino.%20%C2%BFMe%20podr%C3%ADan%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20precios%3F" 
                        target="_blank" 
                        class="whatsapp-link">
                         <i class="fab fa-whatsapp"></i> +54 2267 52-4958 (WhatsApp)
@@ -779,8 +780,6 @@
         // Cierra el menú al hacer clic en un enlace (solo en móvil)
         links.forEach(link => {
             link.addEventListener('click', () => {
-                // Se agregó una condición para asegurarse de que el toggleMenu se ejecute
-                // solo si el menú está activo (abierto) para evitar llamadas innecesarias.
                 if (window.innerWidth <= 768 && navLinks.classList.contains('active')) { 
                     toggleMenu(); 
                 }
