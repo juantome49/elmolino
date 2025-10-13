@@ -27,11 +27,12 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            /* Aseguramos que el cuerpo no tenga un ancho máximo global */
+            /* CLAVE: Aseguramos que el overflow esté oculto para evitar la barra horizontal de 100vw */
+            overflow-x: hidden; 
         }
 
         /* ********************************************************** */
-        /* HEADER - Estilo Transparente y Flotante */
+        /* HEADER - Estilo Transparente y Flotante (Alineación Corregida) */
         /* ********************************************************** */
         header {
             background-color: transparent; 
@@ -44,8 +45,7 @@
         }
 
         nav {
-            /* Eliminamos el max-width para que la barra de navegación también se extienda de borde a borde */
-            /* Se mantiene el padding lateral (40px) para que el contenido no toque los bordes */
+            /* Mantenemos el padding lateral, pero el contenido se extiende al 100% */
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -53,21 +53,13 @@
             align-items: center;
             padding: 0 40px; 
         }
-        
-        /* Resto de estilos de navegación sin cambios */
+
         .nav-links {
             display: flex;
             align-items: center;
             list-style: none;
-            flex-grow: 1; 
-        }
-
-        .nav-left {
-            justify-content: flex-start;
-        }
-
-        .nav-right {
-            justify-content: flex-end;
+            /* Eliminamos flex-grow para que los grupos de enlaces no se estiren */
+            /* En su lugar, el justify-content: space-between en nav los separa */
         }
 
         .nav-links li {
@@ -86,6 +78,18 @@
             color: var(--color-secundario);
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            /* Margin auto para centrarlo si se usa flex en nav */
+        }
+        
+        .logo img {
+            height: 40px; /* Tamaño del logo */
+            margin-right: 10px;
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9)); /* Sombra para que destaque en el fondo */
+        }
+
         .logo a {
             font-family: 'Playfair Display', serif;
             font-size: 2.2em; 
@@ -93,9 +97,10 @@
             text-decoration: none;
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-            margin: 0 40px; 
+            margin: 0; /* Ajustado el margen */
         }
 
+        /* Estilos de Botón principal (Reservar Ahora) */
         .btn-principal {
             background-color: transparent;
             border: 2px solid var(--color-claro); 
@@ -106,6 +111,7 @@
             font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
             text-shadow: none; 
+            white-space: nowrap; /* Evita que el botón se rompa */
         }
 
         .btn-principal:hover {
@@ -114,7 +120,7 @@
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow (Asegurando 100% de Ancho de Viewport) */
+        /* Sección Hero con Slideshow (SIMPLIFICADO A 100% DE ANCHO) */
         /* ********************************************************** */
         #hero {
             position: relative;
@@ -125,31 +131,18 @@
             text-align: center;
             color: var(--color-claro);
             overflow: hidden; 
-            width: 100vw; /* **CLAVE: Usamos 100vw para asegurar el ancho total de la pantalla** */
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw; /* Hack para asegurar el ancho completo y centrado */
+            width: 100%; /* CLAVE: Usamos 100% que es más estable */
         }
-
-        .slideshow-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .mySlides {
-            display: none; 
-            width: 100%;
-            height: 100%;
-        }
-
-        .mySlides img {
+        
+        .slideshow-container, .mySlides, .mySlides img {
             width: 100%;
             height: 100%;
             object-fit: cover; 
+            position: absolute; /* Para las diapositivas */
+        }
+        
+        .mySlides {
+            display: none; 
         }
 
         .hero-overlay {
@@ -210,28 +203,21 @@
         }
 
 
-        /* Estilos de Sección general (solo el contenido de estas secciones estará centrado, dejando el fondo blanco/gris del body) */
+        /* Estilos de Sección general */
         section {
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* ********************************************************** */
-        /* Aseguramos que la sección de Ubicación también ocupe todo el ancho si tiene color */
-        /* ********************************************************** */
+        /* Sección Ubicación - Se mantiene el 100% de ancho */
         #ubicacion {
-            padding: 50px 0; /* Quitamos padding lateral para la sección de fondo completo */
+            padding: 50px 0; 
             background-color: var(--color-secundario);
-            width: 100vw;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            
+            width: 100%;
+            /* Eliminamos los márgenes negativos */
         }
         
-        /* El contenido dentro de Ubicación debe estar centrado */
         .ubicacion-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -247,27 +233,8 @@
             color: var(--color-principal);
         }
         
-        /* Contenido del Almacén */
-        #almacen-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .producto-card {
-            background: var(--color-secundario);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+        /* Contenido del Almacén y Footer - Mantienen su max-width centrado */
         
-        .producto-card h3 {
-            color: var(--color-principal);
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
         footer {
             background-color: var(--color-texto);
             color: var(--color-secundario);
@@ -293,6 +260,7 @@
             </ul>
 
             <div class="logo">
+                <img src="491464507_1383399089742950_3219670309350648670_n.jpg" alt="Logo El Molino">
                 <a href="#hero">El Molino</a>
             </div>
 
