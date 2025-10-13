@@ -27,11 +27,11 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
-            overflow-x: hidden; 
+            overflow-x: hidden; /* Evita scroll horizontal no deseado */
         }
 
         /* ********************************************************** */
-        /* HEADER - Transparente y Flotante */
+        /* HEADER - Transparente y Flotante (Corregido y Logo Grande) */
         /* ********************************************************** */
         header {
             background-color: transparent; 
@@ -56,10 +56,12 @@
             display: flex;
             align-items: center;
             list-style: none;
+            /* Se añade un espacio para que los enlaces se distribuyan mejor */
+            flex-basis: auto; 
         }
 
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 25px; /* Más espacio entre los enlaces */
         }
 
         .nav-links a {
@@ -77,21 +79,24 @@
         .logo {
             display: flex;
             align-items: center;
+            flex-grow: 1; /* Permite que el logo ocupe el espacio central */
+            justify-content: center; /* Centra el logo dentro de su espacio */
+            padding-right: 20px; /* Pequeño ajuste para que no se pegue tanto a la izquierda */
         }
         
         .logo img {
-            height: 40px; 
-            margin-right: 10px;
-            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9)); 
+            height: 60px; /* LOGO MÁS GRANDE */
+            margin-right: 15px; /* Más espacio entre el logo y el texto */
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.9)); 
         }
 
         .logo a {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2em; 
+            font-size: 2.8em; /* Texto del logo más grande */
             color: var(--color-claro);
             text-decoration: none;
             letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
             margin: 0; 
         }
 
@@ -100,7 +105,7 @@
             background-color: var(--color-acento); 
             border: 2px solid transparent; 
             color: var(--color-claro);
-            padding: 8px 15px;
+            padding: 8px 18px; /* Ajustado el padding */
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
@@ -116,30 +121,41 @@
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow (FULL WIDTH) */
+        /* Sección Hero con Slideshow (IMÁGENES A FULL WIDTH Y ALTURA CORRECTAS) */
         /* ********************************************************** */
         #hero {
             position: relative;
             height: 100vh;
+            width: 100%; /* Asegura que #hero ocupe el 100% del ancho */
+            overflow: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--color-claro);
-            overflow: hidden; 
-            width: 100%; 
         }
         
-        /* Aseguramos que los elementos internos del slideshow ocupen el 100% */
-        .slideshow-container, .mySlides, .mySlides img {
+        .slideshow-container {
+            position: absolute; /* CLAVE: Ahora el contenedor tiene position absolute */
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; 
-            position: absolute; 
         }
-        
+
         .mySlides {
             display: none; 
+            width: 100%;
+            height: 100%;
+            position: absolute; /* Cada slide también es absoluto */
+            top: 0;
+            left: 0;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que las imágenes cubran sin distorsión */
         }
 
         .hero-overlay {
@@ -160,28 +176,28 @@
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4em; 
+            font-family: 'Playfair Display', serif; /* Mantener Playfair Display */
+            font-style: italic; /* Cursiva */
+            font-size: 4.5em; /* Título aún más grande */
             margin-bottom: 10px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.9); 
-            font-style: italic; 
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.9); /* Sombra más pronunciada */
         }
 
         .hero-content p {
-            font-size: 1.3em;
+            font-size: 1.4em; /* Párrafo más grande */
             margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
         }
         
         .btn-hero {
             background-color: var(--color-acento);
             color: var(--color-claro);
-            padding: 12px 25px;
+            padding: 14px 28px; /* Botón de hero más grande */
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
             transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .btn-hero:hover {
@@ -200,7 +216,7 @@
         }
 
 
-        /* Estilos de Sección general */
+        /* Estilos de Sección general (el contenido interior sigue centrado) */
         section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -281,7 +297,7 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 style="font-family: 'Times New Roman', serif;">Vive el encanto de El Molino</h1> 
+            <h1>Vive el encanto de El Molino</h1> 
             <p>Cabañas para el descanso y sabores auténticos en nuestro almacén regional.</p>
             <a href="#cabanas" class="btn-hero">Ver Cabañas</a>
         </div>
@@ -314,7 +330,7 @@
             </div>
             <div class="producto-card">
                 <h3>Dulces y Conservas</h3>
-                <p>Descripción de la oferta de productos dulces y conservas caseras.</p>
+                <p>Descripción de la oferta de productos dulces y caseras.</p>
             </div>
             <div class="producto-card">
                 <h3>Quesos y Embutidos</h3>
