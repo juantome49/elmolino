@@ -27,35 +27,39 @@
             line-height: 1.6;
             background-color: #f7f7f7;
             scroll-behavior: smooth;
+            /* Aseguramos que el cuerpo no tenga un ancho máximo global */
         }
 
         /* ********************************************************** */
-        /* HEADER - Estilo Transparente y Flotante (Como Cabaña del Lago) */
+        /* HEADER - Estilo Transparente y Flotante */
         /* ********************************************************** */
         header {
-            background-color: transparent; /* Fondo transparente */
+            background-color: transparent; 
             padding: 20px 0;
-            position: absolute; /* Absoluto para flotar sobre el hero */
-            width: 100%;
+            position: absolute; 
+            width: 100%; /* OCUPA TODO EL ANCHO */
             top: 0;
             left: 0;
-            z-index: 2000; /* Alto z-index para estar encima de todo */
+            z-index: 2000; 
         }
 
         nav {
-            max-width: 1200px;
+            /* Eliminamos el max-width para que la barra de navegación también se extienda de borde a borde */
+            /* Se mantiene el padding lateral (40px) para que el contenido no toque los bordes */
+            width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 40px; /* Más padding para los costados */
+            padding: 0 40px; 
         }
-
+        
+        /* Resto de estilos de navegación sin cambios */
         .nav-links {
             display: flex;
             align-items: center;
             list-style: none;
-            flex-grow: 1; /* Permite que el espacio se expanda */
+            flex-grow: 1; 
         }
 
         .nav-left {
@@ -75,7 +79,7 @@
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para legibilidad */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
         }
 
         .nav-links a:hover {
@@ -84,34 +88,33 @@
 
         .logo a {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2em; /* Logo más grande y centrado */
+            font-size: 2.2em; 
             color: var(--color-claro);
             text-decoration: none;
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-            margin: 0 40px; /* Margen para separarlo de los enlaces */
+            margin: 0 40px; 
         }
 
-        /* Estilos de Botón principal (Reservar Ahora) */
         .btn-principal {
             background-color: transparent;
-            border: 2px solid var(--color-claro); /* Borde blanco */
+            border: 2px solid var(--color-claro); 
             color: var(--color-claro);
             padding: 8px 15px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
-            text-shadow: none; /* Quitamos la sombra del texto en el botón */
+            text-shadow: none; 
         }
 
         .btn-principal:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Fondo sutil al pasar el ratón */
+            background-color: rgba(255, 255, 255, 0.2); 
             color: var(--color-claro);
         }
 
         /* ********************************************************** */
-        /* Sección Hero con Slideshow (ocupando todo el ancho) */
+        /* Sección Hero con Slideshow (Asegurando 100% de Ancho de Viewport) */
         /* ********************************************************** */
         #hero {
             position: relative;
@@ -122,7 +125,11 @@
             text-align: center;
             color: var(--color-claro);
             overflow: hidden; 
-            width: 100vw; 
+            width: 100vw; /* **CLAVE: Usamos 100vw para asegurar el ancho total de la pantalla** */
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw; /* Hack para asegurar el ancho completo y centrado */
         }
 
         .slideshow-container {
@@ -146,7 +153,7 @@
         }
 
         .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.3); /* Capa de opacidad más suave */
+            background-color: rgba(0, 0, 0, 0.3); 
             position: absolute;
             top: 0;
             left: 0;
@@ -164,10 +171,10 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4em; /* Título más grande para impacto */
+            font-size: 4em; 
             margin-bottom: 10px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.9); /* Sombra fuerte para legibilidad */
-            font-style: italic; /* Similar al estilo de fuente de la referencia */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9); 
+            font-style: italic; 
         }
 
         .hero-content p {
@@ -176,7 +183,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
         }
         
-        /* Estilos de Botón dentro del Hero */
         .btn-hero {
             background-color: var(--color-acento);
             color: var(--color-claro);
@@ -204,11 +210,33 @@
         }
 
 
-        /* Estilos de Sección general (manteniendo las secciones debajo) */
+        /* Estilos de Sección general (solo el contenido de estas secciones estará centrado, dejando el fondo blanco/gris del body) */
         section {
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* ********************************************************** */
+        /* Aseguramos que la sección de Ubicación también ocupe todo el ancho si tiene color */
+        /* ********************************************************** */
+        #ubicacion {
+            padding: 50px 0; /* Quitamos padding lateral para la sección de fondo completo */
+            background-color: var(--color-secundario);
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            
+        }
+        
+        /* El contenido dentro de Ubicación debe estar centrado */
+        .ubicacion-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
         .section-title {
@@ -349,14 +377,16 @@
         </ul>
     </section>
 
-    <section id="ubicacion" style="background-color: var(--color-secundario); padding: 50px 20px;">
-        <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
-        <div id="contacto" style="text-align: center;">
-            <p><strong>Dirección:</strong> [Añadir Dirección Completa]</p>
-            <p><strong>Teléfono:</strong> [Añadir Teléfono de Contacto]</p>
-            <p><strong>Email:</strong> [Añadir Email de Contacto]</p>
-            <div style="margin-top: 20px; height: 300px; background-color: #ccc; width: 100%; max-width: 800px; margin: 20px auto;">
-                [Espacio para Mapa Interactivo]
+    <section id="ubicacion">
+        <div class="ubicacion-content">
+            <h2 class="section-title" style="color: var(--color-principal);">Encontranos</h2>
+            <div id="contacto" style="text-align: center;">
+                <p><strong>Dirección:</strong> [Añadir Dirección Completa]</p>
+                <p><strong>Teléfono:</strong> [Añadir Teléfono de Contacto]</p>
+                <p><strong>Email:</strong> [Añadir Email de Contacto]</p>
+                <div style="margin-top: 20px; height: 300px; background-color: #ccc; width: 100%; max-width: 800px; margin: 20px auto;">
+                    [Espacio para Mapa Interactivo]
+                </div>
             </div>
         </div>
     </section>
