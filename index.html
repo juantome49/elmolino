@@ -269,17 +269,28 @@
             padding: 0 20px;
         }
 
-        .almacen-photos img {
+        /* Estilo de la imagen dentro del enlace */
+        .almacen-photos a img {
+            display: block; /* Para que el enlace se ajuste al tamaño de la imagen */
             width: 100%;
             height: 200px; /* Altura fija para uniformidad */
             object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
+            cursor: pointer; /* Indica que es clickeable */
+        }
+        
+        /* Estilo del enlace (contenedor de la imagen) */
+        .almacen-photos a {
+            display: block;
+            text-decoration: none;
+            line-height: 0; /* Elimina espacio extra debajo de la imagen */
         }
 
-        .almacen-photos img:hover {
+        .almacen-photos a img:hover {
             transform: scale(1.03);
+            opacity: 0.9;
         }
 
         @media (max-width: 900px) {
@@ -292,7 +303,7 @@
                 grid-template-columns: 1fr; /* 1 columna en móviles */
                 gap: 20px;
             }
-            .almacen-photos img {
+            .almacen-photos a img {
                  height: 250px;
             }
         }
@@ -517,14 +528,30 @@
         </div>
 
         <div class="almacen-photos">
-            <img src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén 1">
-            <img src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén 2">
-            <img src="fotos/IMG-20251012-WA0057.jpg" alt="Foto de productos regionales del almacén 3">
-            <img src="fotos/IMG-20251012-WA0056.jpg" alt="Foto del quincho buffet 4">
-            <img src="fotos/IMG-20251012-WA0054.jpg" alt="Foto de bebidas en el almacén 5">
-            <img src="fotos/IMG-20251012-WA0049.jpg" alt="Foto de la barra del almacén 6">
-            <img src="fotos/IMG-20251012-WA0046.jpg" alt="Foto de detalles de la decoración del almacén 7">
-            <img src="fotos/IMG-20251012-WA0045.jpg" alt="Foto de la comida del buffet 8">
+            <a href="fotos/IMG-20251012-WA0065.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0065.jpg" alt="Foto del interior del almacén 1">
+            </a>
+            <a href="fotos/IMG-20251012-WA0060.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0060.jpg" alt="Foto de productos regionales del almacén 2">
+            </a>
+            <a href="fotos/IMG-20251012-WA0057.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0057.jpg" alt="Foto de productos regionales del almacén 3">
+            </a>
+            <a href="fotos/IMG-20251012-WA0056.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0056.jpg" alt="Foto del quincho buffet 4">
+            </a>
+            <a href="fotos/IMG-20251012-WA0054.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0054.jpg" alt="Foto de bebidas en el almacén 5">
+            </a>
+            <a href="fotos/IMG-20251012-WA0049.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0049.jpg" alt="Foto de la barra del almacén 6">
+            </a>
+            <a href="fotos/IMG-20251012-WA0046.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0046.jpg" alt="Foto de detalles de la decoración del almacén 7">
+            </a>
+            <a href="fotos/IMG-20251012-WA0045.jpg" target="_blank">
+                <img src="fotos/IMG-20251012-WA0045.jpg" alt="Foto de la comida del buffet 8">
+            </a>
         </div>
         
         <div class="service-list">
