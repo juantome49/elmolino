@@ -13,6 +13,7 @@
             --color-acento: #4CAF50; /* Tonalidad verde suave (naturaleza) */
             --color-texto: #333333;
             --color-claro: #FFFFFF;
+            --color-nav-bg: #8B4513; /* Color de fondo de la navegación principal si se moviera */
         }
 
         * {
@@ -29,60 +30,48 @@
             scroll-behavior: smooth;
         }
 
-        /* Encabezado y Navegación */
-        header {
-            background-color: var(--color-principal);
-            color: var(--color-claro);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
+        /* ********************************************************** */
+        /* Nuevo Estilo de Navegación (flotante, encima del contenido) */
+        /* ********************************************************** */
+        .floating-nav {
+            background-color: var(--color-nav-bg); 
+            padding: 10px 0;
+            position: sticky; /* Se mantendrá visible al hacer scroll */
             top: 0;
-            z-index: 1000;
+            z-index: 900;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        nav {
+        .floating-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 0 20px;
         }
 
-        .logo a {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            color: var(--color-claro);
-            text-decoration: none;
-            letter-spacing: 1px;
+        .floating-nav ul li {
+            margin: 0 15px;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul a {
+        .floating-nav ul a {
             color: var(--color-claro);
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s;
         }
 
-        nav ul a:hover {
+        .floating-nav ul a:hover {
             color: var(--color-secundario);
         }
-
+        
         /* Estilos de Botón principal (similar a 'Reserva ahora') */
         .btn-principal {
             background-color: var(--color-acento);
             color: var(--color-claro);
-            padding: 10px 20px;
+            padding: 8px 15px; /* Ajuste el padding para el menú flotante */
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
@@ -92,18 +81,21 @@
         .btn-principal:hover {
             background-color: #388E3C; /* Verde oscuro al pasar el ratón */
         }
-
-        /* Sección Hero con Slideshow */
+        
+        /* ********************************************************** */
+        /* Sección Hero con Slideshow (ocupando todo el ancho) */
+        /* ********************************************************** */
         #hero {
             position: relative;
-            height: 100vh; /* Ocupa toda la altura de la ventana */
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--color-claro);
-            margin-top: 60px; /* Para que no quede bajo el header fijo */
-            overflow: hidden; /* Asegura que las imágenes no se desborden */
+            /* ELIMINAMOS EL MARGEN SUPERIOR QUE ERA DE 60PX */
+            overflow: hidden; 
+            width: 100vw; /* Asegura que ocupe todo el ancho */
         }
 
         .slideshow-container {
@@ -115,7 +107,7 @@
         }
 
         .mySlides {
-            display: none; /* Oculta todas las diapositivas por defecto */
+            display: none; 
             width: 100%;
             height: 100%;
         }
@@ -123,23 +115,23 @@
         .mySlides img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+            object-fit: cover; 
         }
 
-        /* Capa de superposición para el texto del hero */
+        /* Capa de superposición más fuerte para garantizar el contraste del texto */
         .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.5); /* Oscurecido ligeramente más */
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Asegura que la superposición esté sobre las imágenes */
+            z-index: 1; 
         }
 
         .hero-content {
             position: relative;
-            z-index: 2; /* Asegura que el contenido esté sobre la superposición */
+            z-index: 2; 
             max-width: 800px;
             padding: 20px;
         }
@@ -148,6 +140,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 3.5em;
             margin-bottom: 20px;
+            /* text-shadow: 2px 2px 4px rgba(0,0,0,0.8); */ /* Opcional: para mejor legibilidad */
         }
 
         .hero-content p {
@@ -219,22 +212,7 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#hero">El Molino</a>
-            </div>
-            <ul>
-                <li><a href="#cabanas">Cabañas</a></li>
-                <li><a href="#almacen">Almacén</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    
     <section id="hero">
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -257,6 +235,16 @@
             <a href="#cabanas" class="btn-principal">Ver Cabañas</a>
         </div>
     </section>
+
+    <div class="floating-nav">
+        <ul>
+            <li><a href="#cabanas">Cabañas</a></li>
+            <li><a href="#almacen">Almacén</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#contacto" class="btn-principal">Reservar Ahora</a></li>
+        </ul>
+    </div>
 
     <section id="cabanas">
         <h2 class="section-title">Nuestras Cabañas</h2>
